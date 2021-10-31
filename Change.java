@@ -1,22 +1,22 @@
 import java.util.Scanner;
 import java.io.IOException;
 
-//°Å½º¸§µ· ÀúÀå ¹× °è»ê Å¬·¡½º
+//ê±°ìŠ¤ë¦„ëˆ ì €ì¥ ë° ê³„ì‚° í´ë˜ìŠ¤
 public class Change
 {
-	static int[] giveMoney = new int[5];	// ¼Õ´Ô¿¡°Ô µå¸± È­ÆóÁ¾·ù°¹¼öµé(¸¸¿ø, ¿ÀÃµ¿ø, Ãµ¿ø, ¿À¹é¿ø, ¹é¿ø)
-	static final int[] bills = {10000, 5000, 1000, 500, 100};	// È­Æó Á¾·ùµé
-	static int [] moneyCount = {5, 2, 10, 4, 10};	// ±İ°í Åë ÃÊ±â°ª
+	static int[] giveMoney = new int[5];	// ì†ë‹˜ì—ê²Œ ë“œë¦´ í™”íì¢…ë¥˜ê°¯ìˆ˜ë“¤(ë§Œì›, ì˜¤ì²œì›, ì²œì›, ì˜¤ë°±ì›, ë°±ì›)
+	static final int[] bills = {10000, 5000, 1000, 500, 100};	// í™”í ì¢…ë¥˜ë“¤
+	static int [] moneyCount = {5, 2, 10, 4, 10};	// ê¸ˆê³  í†µ ì´ˆê¸°ê°’
 
 
-	// °Å½º¸§µ· °è»ê	  
-	public static void changeCal(int pay, int price) throws IOException // ¹ŞÀº µ·(»ç¶÷ÀÇ ÀÔ·ÂÇÑ °ª), ¸Ş´º°¡°İ
+	// ê±°ìŠ¤ë¦„ëˆ ê³„ì‚°	  
+	public static void changeCal(int pay, int price) throws IOException // ë°›ì€ ëˆ(ì‚¬ëŒì˜ ì…ë ¥í•œ ê°’), ë©”ë‰´ê°€ê²©
 	{
 		int won = 10000;
-		int sw = 1;				// ±ÇÁ¾ º¯°æ º¯¼ö
-		int change;				// °Å½º¸§µ·
-		int totalChange = 0;	// µ·ÅëÀÇ ÃÑ ±İ¾×
-		int lack = 0;			// (µ·ÅëÀº µÇÁö¸¸)È­Æó°¡ ¸ğÀÚ¸¦¶§ °Å¸£´Â º¯¼ö
+		int sw = 1;				// ê¶Œì¢… ë³€ê²½ ë³€ìˆ˜
+		int change;				// ê±°ìŠ¤ë¦„ëˆ
+		int totalChange = 0;	// ëˆí†µì˜ ì´ ê¸ˆì•¡
+		int lack = 0;			// (ëˆí†µì€ ë˜ì§€ë§Œ)í™”íê°€ ëª¨ìë¥¼ë•Œ ê±°ë¥´ëŠ” ë³€ìˆ˜
 
 		Scanner sc = new Scanner(System.in);
 
@@ -26,33 +26,33 @@ public class Change
 
 		TempStation ts = new TempStation();
 
-		// µ·ÅëÀÇ ÃÑ ±İ¾× °è»ê
+		// ëˆí†µì˜ ì´ ê¸ˆì•¡ ê³„ì‚°
 		for (int a=0; a<5; a++)
 			totalChange += bills[a] * moneyCount[a];
 
 		change = pay - price;
 
-		int x = 0;				// moneyCount[x] º¯¼ö
+		int x = 0;				// moneyCount[x] ë³€ìˆ˜
 		int count = 1;			// 
 		int temple = change;
 
-		// ÃÑ ±İ¾× < °Å½º¸§µ·
+		// ì´ ê¸ˆì•¡ < ê±°ìŠ¤ë¦„ëˆ
 		if (totalChange < change)
 		{
-			System.out.println("°Å½º¸§µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
-			System.out.println("Àç°í¸¦ Ãß°¡/»èÁ¦ ÇØÁÖ¼¼¿ä.");
+			System.out.println("ê±°ìŠ¤ë¦„ëˆì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+			System.out.println("ì¬ê³ ë¥¼ ì¶”ê°€/ì‚­ì œ í•´ì£¼ì„¸ìš”.");
 			
 			System.out.println();
-			System.out.println("ÇÊ¿ä ½Ã °ü¸®ÀÚ¿¡°Ô ÀüÈ­ÁÖ¼¼¿ä...");
-			System.out.println("°ü¸®ÀÚ : ±èÈ£Áø");
-			System.out.println("¢Ï 010-4848-4114");
+			System.out.println("í•„ìš” ì‹œ ê´€ë¦¬ìì—ê²Œ ì „í™”ì£¼ì„¸ìš”...");
+			System.out.println("ê´€ë¦¬ì : ê¹€í˜¸ì§„");
+			System.out.println("â˜ 010-4848-4114");
 
 			ucs.uCustomMenuSelect();
 		}
-		// ÃÑ ±İ¾× > °Å½º¸§µ·
+		// ì´ ê¸ˆì•¡ > ê±°ìŠ¤ë¦„ëˆ 
 		else
 		{
-			// °Å½º¸§µ· ±ÇÁ¾º° ¼ö·® °è»ê
+			// ê±°ìŠ¤ë¦„ëˆ ê¶Œì¢…ë³„ ìˆ˜ëŸ‰ ê³„ì‚°
 			while (true)
 			{
 				if (moneyCount[x] == 0 || change - won < 0)
@@ -88,14 +88,14 @@ public class Change
 		}	// end else
 		
 
-		// ÃÑ ±İ¾× > °Å½º¸§µ·(±×·¯³ª ¼ö·® ºÎÁ·)
+		// ì´ ê¸ˆì•¡ > ê±°ìŠ¤ë¦„ëˆ(ê·¸ëŸ¬ë‚˜ ìˆ˜ëŸ‰ ë¶€ì¡±)
 		if (temple != lack)
 		{
-			System.out.println("°Å½º¸§µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+			System.out.println("ê±°ìŠ¤ë¦„ëˆì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 			System.out.println();
-			System.out.println("ÇÊ¿ä ½Ã °ü¸®ÀÚ¿¡°Ô ÀüÈ­ÁÖ¼¼¿ä...");
-			System.out.println("°ü¸®ÀÚ : ±èÈ£Áø");
-			System.out.println("¢Ï 010-4848-4114");
+			System.out.println("í•„ìš” ì‹œ ê´€ë¦¬ìì—ê²Œ ì „í™”ì£¼ì„¸ìš”...");
+			System.out.println("ê´€ë¦¬ì : ê¹€í˜¸ì§„");
+			System.out.println("â˜ 010-4848-4114");
 			System.out.println();
 			System.out.println();
 			return;
@@ -104,17 +104,17 @@ public class Change
 		ISetup.payNum.put(UserMode.count, UserMode.pay);
 		ts.temp.clear();
 
-		System.out.println("ÀÔ±¸¿¡¼­ °Å½º¸§µ·À» °¡Á®°¡¼¼¿ä.");
+		System.out.println("ì…êµ¬ì—ì„œ ê±°ìŠ¤ë¦„ëˆì„ ê°€ì ¸ê°€ì„¸ìš”.");
 		System.out.println("===============================");
 		System.out.println();
 		for (int i =0; i<5; i++)
-			System.out.printf("%5d¿ø : %2d°³\n", bills[i],giveMoney[i]);
+			System.out.printf("%5dì› : %2dê°œ\n", bills[i],giveMoney[i]);
 		System.out.println();
 
-		System.out.println("°Å½º¸§µ· : " + temple);
+		System.out.println("ê±°ìŠ¤ë¦„ëˆ : " + temple);
 		System.out.println();
 		System.out.println("===============================");
-		System.out.print("¢¾°áÁ¦°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù.¢¾");
+		System.out.print("â™¥ê²°ì œê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.â™¥");
 
 		um.uMenuPrint();
 		um.uMenuSelect();
@@ -122,9 +122,9 @@ public class Change
 		
 		//um.uPayRun(temp);
 		
-		// ¡Ø ¿©±â °ËÅä ÇÊ¼ö ~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		// â€» ì—¬ê¸° ê²€í†  í•„ìˆ˜ ~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		//UserMode um = new UserMode();
-		//um.uPayRun(º¤ÅÍ<Ingredient> Å¸ÀÔ);
+		//um.uPayRun(ë²¡í„°<Ingredient> íƒ€ì…);
 
 	}
 	
