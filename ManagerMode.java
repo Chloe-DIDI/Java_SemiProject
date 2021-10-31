@@ -54,7 +54,7 @@ public class ManagerMode
 				System.out.println("잘못 입력하셨습니다.");
 			}
 
-			// ★ IOException 예외처리
+			// ★ IOException 예외처리 
 			catch (IOException e)
 			{
 			}
