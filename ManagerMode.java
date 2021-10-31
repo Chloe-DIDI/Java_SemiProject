@@ -6,55 +6,55 @@ import java.io.IOException;
 public class ManagerMode 
 {
 	private static BufferedReader br;
-	private static Integer sel;				//-- ¼±ÅÃ °ª
+	private static Integer sel;				//-- ì„ íƒ ê°’
 
 	static
 	{
-		// BufferedReader ÀÎ½ºÅÏ½º »ı¼º
+		// BufferedReader ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 
-	public void mMenuPrint() // ¸Ş´º Ãâ·Â ¸Ş¼Òµå
+	public void mMenuPrint() // ë©”ë‰´ ì¶œë ¥ ë©”ì†Œë“œ
 	{
-		// ¡Ú Å×½ºÆ®°¡ ÇÊ¿ä
+		// â˜… í…ŒìŠ¤íŠ¸ê°€ í•„ìš”
 		if (Change.moneyCount[0] == 0 || Change.moneyCount[1] == 0 || 
 			Change.moneyCount[2] == 0 || Change.moneyCount[3] == 0 || 
 			Change.moneyCount[4] < 5)
-			System.out.println("¡Ø°æ°í¡Ø ½ÃÀçÁ¡°ËÀÌ ÇÊ¿äÇÕ´Ï´Ù.");
+			System.out.println("â€»ê²½ê³ â€» ì‹œì¬ì ê²€ì´ í•„ìš”í•©ë‹ˆë‹¤.");
 
 		System.out.println();
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢              [¸Ş´º Ãâ·Â]                ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢            1. ¿äÃ»»çÇ× È®ÀÎ             ¦¢");
-		System.out.println("¦¢            2. Àç°í °ü¸®                 ¦¢");
-		System.out.println("¦¢            3. ±İ°í °ü¸®                 ¦¢");
-		System.out.println("¦¢            4. ¸ğµå ¼±ÅÃ                 ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚              [ë©”ë‰´ ì¶œë ¥]                â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚            1. ìš”ì²­ì‚¬í•­ í™•ì¸             â”‚");
+		System.out.println("â”‚            2. ì¬ê³  ê´€ë¦¬                 â”‚");
+		System.out.println("â”‚            3. ê¸ˆê³  ê´€ë¦¬                 â”‚");
+		System.out.println("â”‚            4. ëª¨ë“œ ì„ íƒ                 â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 	}// end mMenuPrint()
 
 
-	public void mMenuSelect()// ¸Ş´º ¼±ÅÃ ¸Ş¼Òµå
+	public void mMenuSelect()// ë©”ë‰´ ì„ íƒ ë©”ì†Œë“œ
 	{
-		do	// 1~4 ¿Ü¿¡ ´Ù¸¥ °ªÀ» ³ÖÀ¸¸é ¹İº¹
+		do	// 1~4 ì™¸ì— ë‹¤ë¥¸ ê°’ì„ ë„£ìœ¼ë©´ ë°˜ë³µ
 		{
 			try
 			{
-				System.out.print(">> ¸Ş´º ¼±ÅÃ(1~4) : ");
+				System.out.print(">> ë©”ë‰´ ì„ íƒ(1~4) : ");
 
 				Password.sel = Integer.parseInt(br.readLine());
 			}
 
 			catch (NumberFormatException e)
 			{
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 
-			// ¡Ú IOException ¿¹¿ÜÃ³¸®
+			// â˜… IOException ì˜ˆì™¸ì²˜ë¦¬
 			catch (IOException e)
 			{
 			}
@@ -64,17 +64,17 @@ public class ManagerMode
 	}// end mMenuSelect()
 
 
-	public void mMenuRun() throws IOException // ¸Ş´º È£Ãâ ¸Ş¼Òµå
+	public void mMenuRun() throws IOException // ë©”ë‰´ í˜¸ì¶œ ë©”ì†Œë“œ
 	{
-		// Password ÀÎ½ºÅÏ½º »ı¼º
-		Password pw = new Password();
+		// Password ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		Password pw = new Password(); 
 
-		switch (Password.sel)	// ÀÔ·Â¹ŞÀº °ª¿¡ µû¶ó ½ÇÇà
+		switch (Password.sel)	// ì…ë ¥ë°›ì€ ê°’ì— ë”°ë¼ ì‹¤í–‰
 		{
-			case Menus.E_ONE : mNote(); break;		// ¿äÃ»»çÇ× È®ÀÎÀ¸·Î
-			case Menus.E_TWO : mStorage(); break;	// Àç°í °ü¸®·Î
-			case Menus.E_THREE : mMoney(); break;	// ±İ°í °ü¸®·Î
-			case Menus.E_FOUR :						// pw¸ğµå ¼±ÅÃÀ¸·Î
+			case Menus.E_ONE : mNote(); break;		// ìš”ì²­ì‚¬í•­ í™•ì¸ìœ¼ë¡œ
+			case Menus.E_TWO : mStorage(); break;	// ì¬ê³  ê´€ë¦¬ë¡œ
+			case Menus.E_THREE : mMoney(); break;	// ê¸ˆê³  ê´€ë¦¬ë¡œ
+			case Menus.E_FOUR :						// pwëª¨ë“œ ì„ íƒìœ¼ë¡œ
 			{
 				pw.modePrint();
 				pw.modeSelect();
@@ -84,21 +84,21 @@ public class ManagerMode
 	}// end mMenuRun()
 
 
-	// ¡Ù¡Ù¡Ù¹Ì¿Ï¼º¡Ù¡Ù¡Ù (¹«ÇÑ¹İº¹µÊ)
-	public void mNote() throws IOException // ¿äÃ»»çÇ× È®ÀÎ ¸Ş¼Òµå
+	// â˜†â˜†â˜†ë¯¸ì™„ì„±â˜†â˜†â˜† (ë¬´í•œë°˜ë³µë¨)
+	public void mNote() throws IOException // ìš”ì²­ì‚¬í•­ í™•ì¸ ë©”ì†Œë“œ
 	{
 		System.out.println(ISetup.sbNote);
 
-		System.out.print("°í°´ÀÇ ¼Ò¸®ÇÔÀ» ºñ¿ì½Ã°Ú½À´Ï±î? (Y/N) : ");
+		System.out.print("ê³ ê°ì˜ ì†Œë¦¬í•¨ì„ ë¹„ìš°ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 		Password.con = br.readLine().toUpperCase();
  
-		if (Password.con.equals("Y"))	// Y ÀÔ·ÂÇÑ °æ¿ì
+		if (Password.con.equals("Y"))	// Y ì…ë ¥í•œ ê²½ìš°
 		{								// 
 			ISetup.sbNote.delete(0,ISetup.sbNote.length());
-			System.out.println("°í°´ÀÇ ¼Ò¸®ÇÔÀÌ ºñ¿öÁ³½À´Ï´Ù");
+			System.out.println("ê³ ê°ì˜ ì†Œë¦¬í•¨ì´ ë¹„ì›Œì¡ŒìŠµë‹ˆë‹¤");
 		}
 		
-		mMenuPrint();	// °ü¸®ÀÚ ¸Ş´º Ãâ·ÂÀ¸·Î
+		mMenuPrint();	// ê´€ë¦¬ì ë©”ë‰´ ì¶œë ¥ìœ¼ë¡œ
 		mMenuSelect();
 		mMenuRun();
 
@@ -108,40 +108,40 @@ public class ManagerMode
 	public void mStorageSelect()
 	{
 		System.out.println();
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢       [¸Ş´º Ãâ·Â] (ÀÌÀü¸Ş´º : -1)       ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢            1. Àç°í Ãß°¡/»èÁ¦            ¦¢");
-		System.out.println("¦¢            2. Ç°¸ñ Ãß°¡/»èÁ¦            ¦¢");
-		System.out.println("¦¢            3. ¿ë±â Ãß°¡                 ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚       [ë©”ë‰´ ì¶œë ¥] (ì´ì „ë©”ë‰´ : -1)       â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚            1. ì¬ê³  ì¶”ê°€/ì‚­ì œ            â”‚");
+		System.out.println("â”‚            2. í’ˆëª© ì¶”ê°€/ì‚­ì œ            â”‚");
+		System.out.println("â”‚            3. ìš©ê¸° ì¶”ê°€                 â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 	}// end mStorageSelect()
 
 
-	public void mStorage() throws IOException // Àç°í °ü¸® ¸Ş¼Òµå
+	public void mStorage() throws IOException // ì¬ê³  ê´€ë¦¬ ë©”ì†Œë“œ
 	{
-		// Storagechange ÀÎ½ºÅÏ½º »ı¼º
+		// Storagechange ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		MStorage stc = new MStorage();
 
 		MStorageNew msn = new MStorageNew();
 
-		mStorageSelect();	// Ãâ·Â¹® È£Ãâ
+		mStorageSelect();	// ì¶œë ¥ë¬¸ í˜¸ì¶œ
 
-		do	// 1~3 ¿Ü¿¡ ´Ù¸¥ °ªÀ» ³ÖÀ¸¸é ¹İº¹
+		do	// 1~3 ì™¸ì— ë‹¤ë¥¸ ê°’ì„ ë„£ìœ¼ë©´ ë°˜ë³µ
 		{
-			System.out.print(">> ¸Ş´º ¼±ÅÃ(1~3) : ");
+			System.out.print(">> ë©”ë‰´ ì„ íƒ(1~3) : ");
 
 			Password.sel = Integer.parseInt(br.readLine());
 		}
 		while (Password.sel!=-1 && (Password.sel<1 || Password.sel>3));
 
 
-		switch (Password.sel)	// ÀÔ·Â¹ŞÀº °ª¿¡ µû¶ó ½ÇÇà
+		switch (Password.sel)	// ì…ë ¥ë°›ì€ ê°’ì— ë”°ë¼ ì‹¤í–‰
 		{
 			case Menus.E_MINUS :
 			{
@@ -149,23 +149,23 @@ public class ManagerMode
 				mMenuSelect();
 				mMenuRun();
 			} break;
-			case Menus.E_ONE :	// Àç°í Ãß°¡ / »èÁ¦·Î
+			case Menus.E_ONE :	// ì¬ê³  ì¶”ê°€ / ì‚­ì œë¡œ
 			{
 				mStock();
 
 				stc.mStorageChange();
 			} break;
-			case Menus.E_TWO :	// Ç°¸ñ Ãß°¡ / »èÁ¦·Î
+			case Menus.E_TWO :	// í’ˆëª© ì¶”ê°€ / ì‚­ì œë¡œ
 			{
 				mStock();
 
 				msn.mAddRemove();
 			} break;
-			case Menus.E_THREE :// Ç°¸ñ Ãß°¡ / »èÁ¦·Î
+			case Menus.E_THREE :// í’ˆëª© ì¶”ê°€ / ì‚­ì œë¡œ
 			{
 				stc.mBowlChange();
 			} break;
-			default : System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù."); break;
+			default : System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤."); break;
 		}
 
 	}// end mStorage()
@@ -173,104 +173,104 @@ public class ManagerMode
 	public void mMoneySelect()
 	{
 		System.out.println();
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢              [¸Ş´º Ãâ·Â]                ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢          1. ½ÃÀç                        ¦¢");
-		System.out.println("¦¢          2. ¸ÅÃâ È®ÀÎ ¹× Á¤»ê           ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚              [ë©”ë‰´ ì¶œë ¥]                â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚          1. ì‹œì¬                        â”‚");
+		System.out.println("â”‚          2. ë§¤ì¶œ í™•ì¸ ë° ì •ì‚°           â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 	}// end mStorageSelect()
 
-	public void mMoney() throws IOException // Àç°í °ü¸® ¸Ş¼Òµå
+	public void mMoney() throws IOException // ì¬ê³  ê´€ë¦¬ ë©”ì†Œë“œ
 	{
 		MMoneyChange mmcg = new MMoneyChange();
 
 		MMoneyCheck mmck = new MMoneyCheck();
 
-		mMoneySelect();	// Ãâ·Â¹® È£Ãâ
+		mMoneySelect();	// ì¶œë ¥ë¬¸ í˜¸ì¶œ
 
-		do	// 1~2 ¿Ü¿¡ ´Ù¸¥ °ªÀ» ³ÖÀ¸¸é ¹İº¹
+		do	// 1~2 ì™¸ì— ë‹¤ë¥¸ ê°’ì„ ë„£ìœ¼ë©´ ë°˜ë³µ
 		{
-			System.out.print(">> ¸Ş´º ¼±ÅÃ(1~2) : ");
+			System.out.print(">> ë©”ë‰´ ì„ íƒ(1~2) : ");
 
 			Password.sel = Integer.parseInt(br.readLine());
 		}
 		while (Password.sel<1 || Password.sel>2);
 		
 
-		switch (Password.sel)	// ÀÔ·Â¹ŞÀº °ª¿¡ µû¶ó ½ÇÇà
+		switch (Password.sel)	// ì…ë ¥ë°›ì€ ê°’ì— ë”°ë¼ ì‹¤í–‰
 		{
-			case Menus.E_ONE :	// ½ÃÀç·Î
+			case Menus.E_ONE :	// ì‹œì¬ë¡œ
 			{
 				mmcg.rightNowChange();
 				mmcg.changeInput();
 			} break;
-			case Menus.E_TWO :	// ¸ÅÃâ È®ÀÎ ¹× Á¤»êÀ¸·Î
+			case Menus.E_TWO :	// ë§¤ì¶œ í™•ì¸ ë° ì •ì‚°ìœ¼ë¡œ
 			{
 				mmck.mMoneyPrint();
 				mmck.mMoneyCal();
 			} break;
-			default : System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù."); break;
+			default : System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤."); break;
 		}
 
 	}// end mStorage()
 
 
-	public void mStock()	// ÇöÀç Àç°í Ãâ·Â ¸Ş¼Òµå
+	public void mStock()	// í˜„ì¬ ì¬ê³  ì¶œë ¥ ë©”ì†Œë“œ
 	{
-		System.out.println("\n          [Àç°í °ü¸®]");
+		System.out.println("\n          [ì¬ê³  ê´€ë¦¬]");
 		System.out.println();
-		System.out.println("     Ãß°¡¡¤»èÁ¦ÇÒ Àç·á ¼±ÅÃ");
+		System.out.println("     ì¶”ê°€Â·ì‚­ì œí•  ì¬ë£Œ ì„ íƒ");
 		
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢		              ¦¢");
-		System.out.println("¦¢          [¾ßÃ¤]             ¦¢");
-		System.out.println("¦¢		              ¦¢");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚		              â”‚");
+		System.out.println("â”‚          [ì•¼ì±„]             â”‚");
+		System.out.println("â”‚		              â”‚");
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			if (ISetup.v.get(n).cate == 1)
-				System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+				System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 
-				// Å×½ºÆ®¿ë(MMoneyCheck)
-				//System.out.printf("¦¢%2d. %-10s	" + ": " + "%3d°³ / %d¿ø¦¢\n", n+1, ISetup.v.get(n).name, 100, 20000);
+				// í…ŒìŠ¤íŠ¸ìš©(MMoneyCheck)
+				//System.out.printf("â”‚%2d. %-10s	" + ": " + "%3dê°œ / %dì›â”‚\n", n+1, ISetup.v.get(n).name, 100, 20000);
 		}
-		System.out.println("¦¢		              ¦¢");
-		System.out.println("¦¢   -----------------------   ¦¢");
-		System.out.println("¦¢		              ¦¢");
-		System.out.println("¦¢          [¸ŞÀÎ]             ¦¢");
-		System.out.println("¦¢		              ¦¢");
+		System.out.println("â”‚		              â”‚");
+		System.out.println("â”‚   -----------------------   â”‚");
+		System.out.println("â”‚		              â”‚");
+		System.out.println("â”‚          [ë©”ì¸]             â”‚");
+		System.out.println("â”‚		              â”‚");
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			if (ISetup.v.get(n).cate == 2)
-				System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+				System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 		}
-		System.out.println("¦¢		              ¦¢");
-		System.out.println("¦¢   -----------------------   ¦¢");
-		System.out.println("¦¢		              ¦¢");
-		System.out.println("¦¢          [¼Ò½º]             ¦¢");
-		System.out.println("¦¢		              ¦¢");
+		System.out.println("â”‚		              â”‚");
+		System.out.println("â”‚   -----------------------   â”‚");
+		System.out.println("â”‚		              â”‚");
+		System.out.println("â”‚          [ì†ŒìŠ¤]             â”‚");
+		System.out.println("â”‚		              â”‚");
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			if (ISetup.v.get(n).cate == 3)
-				System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+				System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 		}
-		System.out.println("¦¢		              ¦¢");
+		System.out.println("â”‚		              â”‚");
 
-		System.out.println("¦¢   -----------------------   ¦¢");
-		System.out.println("¦¢		              ¦¢");
-		System.out.println("¦¢          [ÅäÇÎ]             ¦¢");
-		System.out.println("¦¢		              ¦¢");;
+		System.out.println("â”‚   -----------------------   â”‚");
+		System.out.println("â”‚		              â”‚");
+		System.out.println("â”‚          [í† í•‘]             â”‚");
+		System.out.println("â”‚		              â”‚");;
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			if (ISetup.v.get(n).cate == 4)
-				System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+				System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 		}
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		
 	}// end mStock()
 
