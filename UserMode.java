@@ -14,15 +14,15 @@ class UserMode extends TempStation
 
 	static int count;
 	static int pay;
-	public int sumpay;			// ÅõÀÔ±İ¾×À» ´©ÀûÇØ¼­ ³²À» º¯¼ö
-	public int summoney;		// »ø·¯µå ±İ¾×À» °è»êÇÒ º¯¼ö
+	public int sumpay;			// íˆ¬ì…ê¸ˆì•¡ì„ ëˆ„ì í•´ì„œ ë‚¨ì„ ë³€ìˆ˜
+	public int summoney;		// ìƒëŸ¬ë“œ ê¸ˆì•¡ì„ ê³„ì‚°í•  ë³€ìˆ˜
 
 	static Password pw;
 
 
-	static	// ÃÊ±âÈ­
+	static	// ì´ˆê¸°í™”
 	{
-		// Scanner ÀÎ½ºÅÏ½º »ı¼º 
+		// Scanner ì¸ìŠ¤í„´ìŠ¤ ìƒì„± 
 		sc = new Scanner(System.in);
 
 		br = new BufferedReader(new InputStreamReader(System.in));
@@ -30,39 +30,39 @@ class UserMode extends TempStation
 		pw = new Password();
 	}
 
-	// ¿Ï¼º
-	// ¸Ş´º Ãâ·Â ¸Ş¼Òµå
+	// ì™„ì„±
+	// ë©”ë‰´ ì¶œë ¥ ë©”ì†Œë“œ
 	public void uMenuPrint()
 	{
 		if (MStorage.bowl==0)
 		{
-			System.out.println("¿ë±â°¡ ºÎÁ·ÇØ¼­ ÆÇ¸Å°¡ ºÒ°¡´ÉÇÕ´Ï´Ù.");
+			System.out.println("ìš©ê¸°ê°€ ë¶€ì¡±í•´ì„œ íŒë§¤ê°€ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.");
 			System.out.println();
-			System.out.println("°ü¸®ÀÚ¿¡°Ô ÀüÈ­ÁÖ¼¼¿ä...");
-			System.out.println("°ü¸®ÀÚ : ±èÈ£Áø");
-			System.out.println("¢Ï 010-4848-4114");
+			System.out.println("ê´€ë¦¬ìì—ê²Œ ì „í™”ì£¼ì„¸ìš”...");
+			System.out.println("ê´€ë¦¬ì : ê¹€í˜¸ì§„");
+			System.out.println("â˜ 010-4848-4114");
 			System.out.println();
 			System.out.println();
-			System.out.println("<<Àü¿øÀÌ Á¾·áµË´Ï´Ù.ºü¡è¹ã¡é¢İ>>");
+			System.out.println("<<ì „ì›ì´ ì¢…ë£Œë©ë‹ˆë‹¤.ë¹ â†‘ë°¤â†“â™¬>>");
 			System.exit(-1);
 		}
 
 		System.out.println();
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢            1 . ÆĞÅ°Â¡ »ø·¯µå            ¦¢");
-		System.out.println("¦¢            2 . Ä¿½ºÅÒ »ø·¯µå            ¦¢");
-		System.out.println("¦¢            3 . ·£´ı »ø·¯µå              ¦¢");
-		System.out.println("¦¢            4 . °í°´ÀÇ ¼Ò¸®              ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
-		System.out.print(" >> ¸Ş´º ¼±ÅÃ(1~4) : ");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚            1 . íŒ¨í‚¤ì§• ìƒëŸ¬ë“œ            â”‚");
+		System.out.println("â”‚            2 . ì»¤ìŠ¤í…€ ìƒëŸ¬ë“œ            â”‚");
+		System.out.println("â”‚            3 . ëœë¤ ìƒëŸ¬ë“œ              â”‚");
+		System.out.println("â”‚            4 . ê³ ê°ì˜ ì†Œë¦¬              â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
+		System.out.print(" >> ë©”ë‰´ ì„ íƒ(1~4) : ");
 	}
 
-	// ¿Ï¼º
-	// ¸Ş´º ¼±ÅÃ ¸Ş¼Òµå
+	// ì™„ì„±
+	// ë©”ë‰´ ì„ íƒ ë©”ì†Œë“œ
 	public void uMenuSelect() throws IOException
 	{
 		do
@@ -70,12 +70,12 @@ class UserMode extends TempStation
 			Password.sel = sc.nextInt();
 		}
 		while ( Password.sel!=4646 && (Password.sel<1 || Password.sel>4) );
-		// 4646¾Æ´Ï¸é¼­, 1º¸´Ù ÀÛ°í 4º¸´Ù Å©¸é ÀÔ·Â ´Ù½Ã.
+		// 4646ì•„ë‹ˆë©´ì„œ, 1ë³´ë‹¤ ì‘ê³  4ë³´ë‹¤ í¬ë©´ ì…ë ¥ ë‹¤ì‹œ.
 	}
 
 
-	// ¿Ï¼º
-	// ¼±ÅÃµÈ ¸Ş´º ½ÇÇà¿¡ µû¸¥ ±â´É È£Ãâ ¸Ş¼Òµå
+	// ì™„ì„±
+	// ì„ íƒëœ ë©”ë‰´ ì‹¤í–‰ì— ë”°ë¥¸ ê¸°ëŠ¥ í˜¸ì¶œ ë©”ì†Œë“œ
 	public void uMenuRun() throws IOException
 	{
 		UPackageSalad ups = new UPackageSalad();
@@ -85,7 +85,7 @@ class UserMode extends TempStation
 		URandomSalad urs = new URandomSalad();
 
 		switch (Password.sel)
-		{
+		{ 
 			case Menus.E_ONE : 
 				{
 					ups.uPackageSalad();
@@ -112,44 +112,44 @@ class UserMode extends TempStation
 					pw.modeSelect();
 					pw.modeRun();
 				}
-				//°ü¸®ÀÚ·Î µ¹¾Æ°¡´Â¸Ş¼ÒµåÈ£Ãâ;  break;		
+				//ê´€ë¦¬ìë¡œ ëŒì•„ê°€ëŠ”ë©”ì†Œë“œí˜¸ì¶œ;  break;		
 		}
 	}
 
-	// °í°´ÀÇ¼Ò¸® ¸Ş¼Òµå
+	// ê³ ê°ì˜ì†Œë¦¬ ë©”ì†Œë“œ
 	public void uNote() throws IOException
 	{
 		String note;
 
-		System.out.println("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡");
+		System.out.println("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
 		System.out.println("                                       ");
 		System.out.println("                                       ");
-		System.out.println("      ¡á¡á¡á°í°´ÀÇ ¼Ò¸®ÇÔ¡á¡á¡á        ");
-		System.out.println("    ¿øÇÏ½Ã´Â ¿äÃ» »çÇ×À» Àû¾îÁÖ¼¼¿ä    ");
+		System.out.println("      â– â– â– ê³ ê°ì˜ ì†Œë¦¬í•¨â– â– â–         ");
+		System.out.println("    ì›í•˜ì‹œëŠ” ìš”ì²­ ì‚¬í•­ì„ ì ì–´ì£¼ì„¸ìš”    ");
 		System.out.println("                                       ");
 		System.out.print("- ");
 		note = br.readLine();
 		System.out.println("                                       ");
 		System.out.println("                                       ");
-		System.out.println("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡");
+		System.out.println("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
 
 		ISetup.sbNote.append(note);
 		ISetup.sbNote.append("\n");
-		System.out.println("¢¾¿©·¯ºĞÀÇ ¼ÒÁßÇÑ ÀÇ°ß °¨»çÇÕ´Ï´Ù ^^¢¾");
+		System.out.println("â™¥ì—¬ëŸ¬ë¶„ì˜ ì†Œì¤‘í•œ ì˜ê²¬ ê°ì‚¬í•©ë‹ˆë‹¤ ^^â™¥");
 
 		uMenuPrint();
 		uMenuSelect();
 		uMenuRun();
 	}
 
-	// ±¸¸Å °áÁ¤À» ¹°¾îº¸´Â ¸Ş¼Òµå -> ¿¬»êµµ ÀÌ·ç¾îÁöµµ·Ï
+	// êµ¬ë§¤ ê²°ì •ì„ ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ -> ì—°ì‚°ë„ ì´ë£¨ì–´ì§€ë„ë¡
 	public void uDecision() throws IOException
 	{
 		UCustomSalad ucs = new UCustomSalad();
 
 		TempStation ts = new TempStation();
 
-		// À§¿¡¼­ ´ãÀº Àç·áµé..º¤ÅÍ·Î ¹Ş¾Æ¼­ È­¸é¿¡ Ãâ·Â
+		// ìœ„ì—ì„œ ë‹´ì€ ì¬ë£Œë“¤..ë²¡í„°ë¡œ ë°›ì•„ì„œ í™”ë©´ì— ì¶œë ¥
 		for (int i=0; i<temp.size(); i++)
 		{
 			for (int j=0; j<ISetup.v.size(); j++)
@@ -158,8 +158,8 @@ class UserMode extends TempStation
 				{
 					if (ISetup.v.get(j).num < temp.get(i).num)
 					{
-						System.out.println("[%s] Àç°íºÎÁ·");
-						System.out.println("Àç·á ¼±ÅÃÃ¢À¸·Î µÇµ¹¾Æ°©´Ï´Ù. ½î¸®...");
+						System.out.println("[%s] ì¬ê³ ë¶€ì¡±");
+						System.out.println("ì¬ë£Œ ì„ íƒì°½ìœ¼ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤. ì˜ë¦¬...");
 
 						ucs.uCustomMenuSelect();
 					}
@@ -169,63 +169,63 @@ class UserMode extends TempStation
 
 		System.out.println(" =============================================================================");
 
-		System.out.print("  Àç·á      :  ");
+		System.out.print("  ì¬ë£Œ      :  ");
 		for (int i=0; i<temp.size(); i++)
 			System.out.printf("%s ", temp.get(i).name);
 		System.out.println();
 
 
-		int sumkcal=0;	// Ä®·Î¸® ´©ÀûÇÕÀ» ´ãÀ» º¯¼ö
+		int sumkcal=0;	// ì¹¼ë¡œë¦¬ ëˆ„ì í•©ì„ ë‹´ì„ ë³€ìˆ˜
 		for (int i=0; i<temp.size(); i++)
 			sumkcal += temp.get(i).kcal;
-		System.out.printf("  Ä®·Î¸®    :  %dKcal\n", sumkcal);
+		System.out.printf("  ì¹¼ë¡œë¦¬    :  %dKcal\n", sumkcal);
 		
 
-		summoney=0;	// ±İ¾× ´©ÀûÇÕÀ» ´ãÀ» º¯¼ö
+		summoney=0;	// ê¸ˆì•¡ ëˆ„ì í•©ì„ ë‹´ì„ ë³€ìˆ˜
 		for (int i=0; i<temp.size(); i++)
 			summoney += temp.get(i).money;
-		System.out.printf("  ±İ¾×      :  %d¿ø\n", summoney);
+		System.out.printf("  ê¸ˆì•¡      :  %dì›\n", summoney);
 
 
-		// System.out.printf("À¯Åë±âÇÑ : %dÀÏ±îÁö...\n", ¡Ú);
-		Calendar rightNow = Calendar.getInstance();		// Ä¶¸°¼­ Å¬·¡½º »ı¼º
+		// System.out.printf("ìœ í†µê¸°í•œ : %dì¼ê¹Œì§€...\n", â˜…);
+		Calendar rightNow = Calendar.getInstance();		// ìº˜ë¦°ì„œ í´ë˜ìŠ¤ ìƒì„±
 
 		int y = rightNow.get(Calendar.YEAR);
 		int m = rightNow.get(Calendar.MONTH) + 1;
 		int d = rightNow.get(Calendar.DATE);
-		System.out.printf("  Á¦Á¶ÀÏÀÚ  :  %d-%d-%dÀÏ \n", y, m, d);	
+		System.out.printf("  ì œì¡°ì¼ì  :  %d-%d-%dì¼ \n", y, m, d);	
 
 
-		int n = (temp.get(0).name == "¿¬¾î") ?  3 : 5;
+		int n = (temp.get(0).name == "ì—°ì–´") ?  3 : 5;
 		rightNow.add(Calendar.DATE, n);
-		//	get(i)¿¡ µé¾î°¡´Â ÀÎµ¦½º°ª¿¡ µû¶ó À¯Åë±âÇÑÀ» ¿À´Ã·ÎºÎÅÍ Ãß°¡
-		//	¿¬¾î true ¡æ 3
-		//	¿¬¾î false ¡æ 5
+		//	get(i)ì— ë“¤ì–´ê°€ëŠ” ì¸ë±ìŠ¤ê°’ì— ë”°ë¼ ìœ í†µê¸°í•œì„ ì˜¤ëŠ˜ë¡œë¶€í„° ì¶”ê°€
+		//	ì—°ì–´ true â†’ 3
+		//	ì—°ì–´ false â†’ 5
 
 
 		y = rightNow.get(Calendar.YEAR);
 		m = rightNow.get(Calendar.MONTH)+1;
 		d = rightNow.get(Calendar.DATE);
-		System.out.printf("  À¯Åë±âÇÑ  :  %d-%d-%dÀÏ±îÁö...\n", y, m, d);
+		System.out.printf("  ìœ í†µê¸°í•œ  :  %d-%d-%dì¼ê¹Œì§€...\n", y, m, d);
 		System.out.println(" =============================================================================");
 
 
 
 
-		// ¼±ÅÃ (¿©ÅÂ±îÁö ´ãÀº »ø·¯µå ÇÒ²«Áö ¸»²«Áö)
-		System.out.print("°áÁ¦ ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+		// ì„ íƒ (ì—¬íƒœê¹Œì§€ ë‹´ì€ ìƒëŸ¬ë“œ í• ê»€ì§€ ë§ê»€ì§€)
+		System.out.print("ê²°ì œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 		Password.con = sc.next().toUpperCase();	
 
-		// yes¶ó¸é °áÁ¦¸Ş¼Òµå·Î, no¸é ´Ü°è 1·Î- 
+		// yesë¼ë©´ ê²°ì œë©”ì†Œë“œë¡œ, noë©´ ë‹¨ê³„ 1ë¡œ- 
 		if (Password.con.equals("Y"))
 		{
 			uPayRun(temp);
 			uPayment();
 		}
-			// ¡ÚÅ×½ºÆ®ÇÏ·Á°í,
+			// â˜…í…ŒìŠ¤íŠ¸í•˜ë ¤ê³ ,
 		else if(!Password.con.equals("Y"))
 		{
-			System.out.println("Ã³À½À¸·Î µ¹¾Æ°©´Ï´Ù. ");
+			System.out.println("ì²˜ìŒìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤. ");
 			
 			ts.temp.clear();
 
@@ -235,21 +235,21 @@ class UserMode extends TempStation
 		}
 	 }// end uDecision
 
-	// °áÁ¦ È®ÀÎ ¸Ş¼Òµå
-	// uPayment()¿¡¼­´Â temp ¾µÀÏÀÌ ¾øÁö¸¸, uPayRun¿¡ ³Ñ°ÜÁà¾ß ÇÔ.
-	// ¸Å°³º¯¼ö·Î ¾È¹Ş°í uDecision¿¡ ÀÖ´ø temp¿¡ Á¢±ÙÀÌ °¡´É..?
+	// ê²°ì œ í™•ì¸ ë©”ì†Œë“œ
+	// uPayment()ì—ì„œëŠ” temp ì“¸ì¼ì´ ì—†ì§€ë§Œ, uPayRunì— ë„˜ê²¨ì¤˜ì•¼ í•¨.
+	// ë§¤ê°œë³€ìˆ˜ë¡œ ì•ˆë°›ê³  uDecisionì— ìˆë˜ tempì— ì ‘ê·¼ì´ ê°€ëŠ¥..?
 
 	public void uPayment() throws IOException
 	{
 		TempStation ts = new TempStation();
 
-		System.out.print("<<°áÁ¦ ¹æ½ÄÀ» ¼±ÅÃÇÏ¼¼¿ä (Ä«µå/Çö±İ)>>");
+		System.out.print("<<ê²°ì œ ë°©ì‹ì„ ì„ íƒí•˜ì„¸ìš” (ì¹´ë“œ/í˜„ê¸ˆ)>>");
 		Password.con = sc.next();
-			if (Password.con.equals("Çö±İ"))
+			if (Password.con.equals("í˜„ê¸ˆ"))
 			{
 				do
 				{
-					System.out.print("¢º ÁöºÒÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+					System.out.print("â–¶ ì§€ë¶ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 					pay = sc.nextInt();
 					
 				}
@@ -257,7 +257,7 @@ class UserMode extends TempStation
 				
 				if (pay == summoney)
 				{
-					System.out.print("¢¾°áÁ¦°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù.¢¾");
+					System.out.print("â™¥ê²°ì œê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.â™¥");
 					ISetup.payNum.put(count, pay);
 
 					ts.temp.clear();
@@ -268,16 +268,16 @@ class UserMode extends TempStation
 				}
 				else
 				{
-					// °Å½º¸§µ· ¿¬»ê
-					// °Å½º¸§µ· ºÎÁ·
+					// ê±°ìŠ¤ë¦„ëˆ ì—°ì‚°
+					// ê±°ìŠ¤ë¦„ëˆ ë¶€ì¡±
 					Change.changeCal(pay, summoney);
-					//			ÁöºÒÇÑ ±İ¾×, ¸Ş´º °¡°İ
+					//			ì§€ë¶ˆí•œ ê¸ˆì•¡, ë©”ë‰´ ê°€ê²©
 
 				}// end if 
 			}
-			else if (Password.con.equals("Ä«µå"))
+			else if (Password.con.equals("ì¹´ë“œ"))
 			{
-				System.out.print("¢¾°áÁ¦°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù.¢¾");
+				System.out.print("â™¥ê²°ì œê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.â™¥");
 
 				ts.temp.clear();
 
@@ -289,25 +289,25 @@ class UserMode extends TempStation
 	}//end uPayment
 
 
-	public void uPayRun(Vector<Ingredient> temp) // °áÁ¦°¡ ¿Ï·áµÉ ¶§ ¸¸. µ¥ÀÌÅÍ¸¦ ÃßÇÕ?ÀúÀå?ÇÏ´Â ±â´É.
+	public void uPayRun(Vector<Ingredient> temp) // ê²°ì œê°€ ì™„ë£Œë  ë•Œ ë§Œ. ë°ì´í„°ë¥¼ ì¶”í•©?ì €ì¥?í•˜ëŠ” ê¸°ëŠ¥.
 	{
-		// 1. ÆÇ¸ÅµÈ »ø·¯µå (= °áÁ¦ È½¼ö) °¹¼ö Ä«¿îÆ®
+		// 1. íŒë§¤ëœ ìƒëŸ¬ë“œ (= ê²°ì œ íšŸìˆ˜) ê°¯ìˆ˜ ì¹´ìš´íŠ¸
 		count ++;
 		
-		// 2. ¿ë±â ¼ö·®À» - : // ½Ç½Ã°£ ¿¬µ¿¶§¹®¿¡ 1.°ú ºĞ¸®.
+		// 2. ìš©ê¸° ìˆ˜ëŸ‰ì„ - : // ì‹¤ì‹œê°„ ì—°ë™ë•Œë¬¸ì— 1.ê³¼ ë¶„ë¦¬.
 		MStorage.bowl--;
 
-		// temp¸¦ Àç·á ÀÌ¸§¸¸ »Ì¾Æ¼­ ´©Àû½ÃÅ²´Ù.
+		// tempë¥¼ ì¬ë£Œ ì´ë¦„ë§Œ ë½‘ì•„ì„œ ëˆ„ì ì‹œí‚¨ë‹¤.
 		ArrayList<String> tempArray= new ArrayList<String>();
 
 		for (int i =0;i<temp.size();i++ )
 		{
-			tempArray.add(temp.get(i).name);	// ÈÖ¹ß¼º
-			ISetup.payArray.add(temp.get(i).name);	// ´©Àû¿ë
+			tempArray.add(temp.get(i).name);	// íœ˜ë°œì„±
+			ISetup.payArray.add(temp.get(i).name);	// ëˆ„ì ìš©
 		}
 		
-		// ½Ç½Ã°£À¸·Î Àç°í Â÷°¨ÇÏ´Â ±¸¹®.
-		// tempÀÌ¸§°ú ³ÃÀå°í¿¡ ÀÌ¸§ÀÌ °°´Ù¸é ³ÃÀå°í ¼ö·® Â÷°¨.
+		// ì‹¤ì‹œê°„ìœ¼ë¡œ ì¬ê³  ì°¨ê°í•˜ëŠ” êµ¬ë¬¸.
+		// tempì´ë¦„ê³¼ ëƒ‰ì¥ê³ ì— ì´ë¦„ì´ ê°™ë‹¤ë©´ ëƒ‰ì¥ê³  ìˆ˜ëŸ‰ ì°¨ê°.
 		for (int i =0;i<temp.size();i++ )
 		{
 			for (int j=0;j<ISetup.v.size();j++)
@@ -319,7 +319,7 @@ class UserMode extends TempStation
 
 		temp.clear();
 
-		// ÅõÀÔ¹ŞÀº ±İ¾×À» ¼ø¹ø ºÙ¿©¼­ Hashtable¿¡ ´ã±â
+		// íˆ¬ì…ë°›ì€ ê¸ˆì•¡ì„ ìˆœë²ˆ ë¶™ì—¬ì„œ Hashtableì— ë‹´ê¸°
 
 
 	}//end uPayRun()
