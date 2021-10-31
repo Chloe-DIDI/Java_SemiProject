@@ -6,115 +6,115 @@ import java.util.Vector;
 import java.io.IOException;
 import java.util.Iterator;
 
-// ·£´ı »ø·¯µå Å¬·¡½º
+// ëœë¤ ìƒëŸ¬ë“œ í´ë˜ìŠ¤
 public class URandomSalad
 {
-   private static Integer sel;         // ¼±ÅÃ °ªÀ» ´ãÀ» º¯¼ö
+   private static Integer sel;         // ì„ íƒ ê°’ì„ ë‹´ì„ ë³€ìˆ˜
    private static String con;   
     
 
-   // ÀÓ½Ã·Î ´ãÀ» ¸ŞÀÎ, ¾ßÃ¤, ¼Ò½º º¤ÅÍ
-   Vector<Ingredient> ranTemp = new Vector<Ingredient>();    // ¸¶Áö¸·¿¡ ´ãÀ» ±×¸©
-   Vector<Ingredient> mTemp = new Vector<Ingredient>();   // ¸ŞÀÎ
-   Vector<Ingredient> vTemp = new Vector<Ingredient>();   // ¾ßÃ¤
-   Vector<Ingredient> sTemp = new Vector<Ingredient>();   // ¼Ò½º
-   Vector<Ingredient> tTemp = new Vector<Ingredient>();   // ÅäÇÎ
-   // Á¦ÇÑ Ä®·Î¸® ÀÔ·Â¹ŞÀ» º¯¼ö
+   // ì„ì‹œë¡œ ë‹´ì„ ë©”ì¸, ì•¼ì±„, ì†ŒìŠ¤ ë²¡í„°
+   Vector<Ingredient> ranTemp = new Vector<Ingredient>();    // ë§ˆì§€ë§‰ì— ë‹´ì„ ê·¸ë¦‡
+   Vector<Ingredient> mTemp = new Vector<Ingredient>();   // ë©”ì¸
+   Vector<Ingredient> vTemp = new Vector<Ingredient>();   // ì•¼ì±„
+   Vector<Ingredient> sTemp = new Vector<Ingredient>();   // ì†ŒìŠ¤
+   Vector<Ingredient> tTemp = new Vector<Ingredient>();   // í† í•‘
+   // ì œí•œ ì¹¼ë¡œë¦¬ ì…ë ¥ë°›ì„ ë³€ìˆ˜
    int limitkcal;  
-   int sumkcal;	// Ä®·Î¸® ´©ÀûÇÕÀ» ´ãÀ» º¯¼ö
+   int sumkcal;	// ì¹¼ë¡œë¦¬ ëˆ„ì í•©ì„ ë‹´ì„ ë³€ìˆ˜
 
-   // Á¦¿ÜÇÒ Àç·áµéÀ» ´ãÀ» º¯¼ö (¼Ò½º´Â Á¦¿Ü ¾ÈÇÔ)
+   // ì œì™¸í•  ì¬ë£Œë“¤ì„ ë‹´ì„ ë³€ìˆ˜ (ì†ŒìŠ¤ëŠ” ì œì™¸ ì•ˆí•¨)
    String limitMain;
    String[] limitVeg = new String[2];
    String[] limitTop = new String[2];
 
 
-   // Ä®·Î¸®¿Í Àç·á ÀÔ·Â
+   // ì¹¼ë¡œë¦¬ì™€ ì¬ë£Œ ì…ë ¥
    public void limitCal()
-   {
+   { 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println();
-       	System.out.println("\tÀÔ·ÂÇÏ½Å Ä®·Î¸®º¸´Ù ³·Àº Ä®·Î¸®·Î »ø·¯µå¸¦ Á¶ÇÕÇØµå¸³´Ï´Ù.");
-		System.out.println("\t(¸ŞÀÎ Àç·á 1Á¾·ù / ¾ç»óÃß 1¹ø / ¼Ò½º 1Á¾·ù ±âº» Æ÷ÇÔ)");
-		System.out.println("\t¾î¶² Àç·á°¡ ¸î ¹ø ³ª¿ÃÁö´Â ¾Æ¹«µµ ¸ğ¸£´Â ·£~ ´ı~ »ø·¯µå");
-		System.out.println("\tÀç·á ¼ÒÁø½Ã, ·£´ı¿¡ Æ÷ÇÔµÇÁö ¾Ê½À´Ï´Ù.");
+       	System.out.println("\tì…ë ¥í•˜ì‹  ì¹¼ë¡œë¦¬ë³´ë‹¤ ë‚®ì€ ì¹¼ë¡œë¦¬ë¡œ ìƒëŸ¬ë“œë¥¼ ì¡°í•©í•´ë“œë¦½ë‹ˆë‹¤.");
+		System.out.println("\t(ë©”ì¸ ì¬ë£Œ 1ì¢…ë¥˜ / ì–‘ìƒì¶” 1ë²ˆ / ì†ŒìŠ¤ 1ì¢…ë¥˜ ê¸°ë³¸ í¬í•¨)");
+		System.out.println("\tì–´ë–¤ ì¬ë£Œê°€ ëª‡ ë²ˆ ë‚˜ì˜¬ì§€ëŠ” ì•„ë¬´ë„ ëª¨ë¥´ëŠ” ëœ~ ë¤~ ìƒëŸ¬ë“œ");
+		System.out.println("\tì¬ë£Œ ì†Œì§„ì‹œ, ëœë¤ì— í¬í•¨ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		System.out.println();
 
-		//System.out.printf("%2d. %5s, ÃÑ %3d°³, ÃÑ %d¿ø\n", n+1, is.vMain.get(n).name, xxx, xxx); 
-		// Àç·á ¹øÈ£, Àç·á ÀÌ¸§, ÃÑ ÆÇ¸Å ¼ö·®, ÃÑ ÆÇ¸Å ±İ¾×
+		//System.out.printf("%2d. %5s, ì´ %3dê°œ, ì´ %dì›\n", n+1, is.vMain.get(n).name, xxx, xxx); 
+		// ì¬ë£Œ ë²ˆí˜¸, ì¬ë£Œ ì´ë¦„, ì´ íŒë§¤ ìˆ˜ëŸ‰, ì´ íŒë§¤ ê¸ˆì•¡
 
 
-		// [Àç·á ¸ñ·Ï]
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢                             ¦¢");
-		System.out.println("¦¢         [Àç·á ¸ñ·Ï]         ¦¢");
-		System.out.println("¦¢                             ¦¢");
-		System.out.println("¦¢            [¾ßÃ¤]           ¦¢");
+		// [ì¬ë£Œ ëª©ë¡]
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚                             â”‚");
+		System.out.println("â”‚         [ì¬ë£Œ ëª©ë¡]         â”‚");
+		System.out.println("â”‚                             â”‚");
+		System.out.println("â”‚            [ì•¼ì±„]           â”‚");
 		
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			 if (ISetup.v.get(n).cate == 1)
-				System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+				System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 
 		        
 
 		}
 
-		System.out.println("¦¢                             ¦¢");
-		System.out.println("¦¢            [¸ŞÀÎ]           ¦¢");
+		System.out.println("â”‚                             â”‚");
+		System.out.println("â”‚            [ë©”ì¸]           â”‚");
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			if (ISetup.v.get(n).cate == 2)
-				System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+				System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 		}
 
-		System.out.println("¦¢                             ¦¢");
-		System.out.println("¦¢            [¼Ò½º]           ¦¢");
+		System.out.println("â”‚                             â”‚");
+		System.out.println("â”‚            [ì†ŒìŠ¤]           â”‚");
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			if (ISetup.v.get(n).cate == 3)
-				System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+				System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 		}
 
-		System.out.println("¦¢                             ¦¢");
-		System.out.println("¦¢            [ÅäÇÎ]           ¦¢");
+		System.out.println("â”‚                             â”‚");
+		System.out.println("â”‚            [í† í•‘]           â”‚");
 		for (int n=0; n<ISetup.v.size(); n++)
 		{
 			if (ISetup.v.get(n).cate == 4) 
-			System.out.printf("¦¢%2d. %-10s	" + ":" + "%3d°³¦¢\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
+			System.out.printf("â”‚%2d. %-10s	" + ":" + "%3dê°œâ”‚\n", n+1, ISetup.v.get(n).name, ISetup.v.get(n).num);
 		}
-			System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+			System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 
 
-		// Ä®·Î¸® Á¦ÇÑ ÀÔ·Â
+		// ì¹¼ë¡œë¦¬ ì œí•œ ì…ë ¥
 		do         
 		{
-			System.out.print("¢º Á¦ÇÑÇÒ Ä®·Î¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä (200~500): "); 
+			System.out.print("â–¶ ì œí•œí•  ì¹¼ë¡œë¦¬ë¥¼ ì…ë ¥í•˜ì„¸ìš” (200~500): "); 
 			limitkcal = sc.nextInt();
 		}
 		while (limitkcal < 200 || limitkcal > 500);
 
 
-	  	// ¾ßÃ¤ Á¦¿ÜÇÒ Àç·á ÀÔ·Â(ÃÖ´ë 2°³)
+	  	// ì•¼ì±„ ì œì™¸í•  ì¬ë£Œ ì…ë ¥(ìµœëŒ€ 2ê°œ)
 		try
 		{
-			int i = 0 ;   // ·çÇÁ º¯¼ö
-			System.out.print("¢º Á¦¿ÜÇÒ [¾ßÃ¤]Àç·á ÀÔ·Â (ÃÖ´ë 2°³) : ");
+			int i = 0 ;   // ë£¨í”„ ë³€ìˆ˜
+			System.out.print("â–¶ ì œì™¸í•  [ì•¼ì±„]ì¬ë£Œ ì…ë ¥ (ìµœëŒ€ 2ê°œ) : ");
 			limitVeg [i] = br.readLine();
 
-			System.out.print("Á¦¿Ü¸¦ °è¼Ó ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+			System.out.print("ì œì™¸ë¥¼ ê³„ì† í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 			con = sc.next().toUpperCase();
 			  
-			if (con.equals("Y")) // yÀÏ¶§¸¸. ÇÑ¹ø ´õ ÀÔ·Â
+			if (con.equals("Y")) // yì¼ë•Œë§Œ. í•œë²ˆ ë” ì…ë ¥
 			{
 				i++;
-				System.out.print("¢º Á¦¿ÜÇÒ [¾ßÃ¤]Àç·á ÀÔ·Â (ÃÖ´ë 2°³) : ");
+				System.out.print("â–¶ ì œì™¸í•  [ì•¼ì±„]ì¬ë£Œ ì…ë ¥ (ìµœëŒ€ 2ê°œ) : ");
 				limitVeg [i] = br.readLine();
 
-				/* ½ÇÇè¿ë ±¸¹® ( ¡Ø Áö¿öµµ µÊ~!!!)
+				/* ì‹¤í—˜ìš© êµ¬ë¬¸ ( â€» ì§€ì›Œë„ ë¨~!!!)
 				for (int x=0; x<limitVeg.length; x++)
 					System.out.printf("limtieVeg[%d] : %s ", x, limitVeg[x]);
 				*/
@@ -122,24 +122,24 @@ public class URandomSalad
 			System.out.println();
 
 
-			// ¸ŞÀÎ Á¦¿ÜÇÒ Àç·á ÀÔ·Â(ÃÖ´ë 1°³)
-			System.out.print("¢º Á¦¿ÜÇÒ [¸ŞÀÎ]Àç·á ÀÔ·Â (ÃÖ´ë 1°³): ");
+			// ë©”ì¸ ì œì™¸í•  ì¬ë£Œ ì…ë ¥(ìµœëŒ€ 1ê°œ)
+			System.out.print("â–¶ ì œì™¸í•  [ë©”ì¸]ì¬ë£Œ ì…ë ¥ (ìµœëŒ€ 1ê°œ): ");
 			limitMain = br.readLine();
 			System.out.println();
 
 
-			// ÅäÇÎ Á¦¿ÜÇÒ Àç·á ÀÔ·Â(ÃÖ´ë 2°³)
+			// í† í•‘ ì œì™¸í•  ì¬ë£Œ ì…ë ¥(ìµœëŒ€ 2ê°œ)
 			i = 0;
-			System.out.print("¢º Á¦¿ÜÇÒ [ÅäÇÎ]Àç·á ÀÔ·Â (ÃÖ´ë 2°³) : ");
+			System.out.print("â–¶ ì œì™¸í•  [í† í•‘]ì¬ë£Œ ì…ë ¥ (ìµœëŒ€ 2ê°œ) : ");
 			limitTop [i] = br.readLine();
 
-			System.out.print("Á¦¿Ü¸¦ °è¼Ó ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+			System.out.print("ì œì™¸ë¥¼ ê³„ì† í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 			con = sc.next().toUpperCase();
 
-			if (con.equals("Y")) // yÀÏ¶§¸¸. ÇÑ¹ø ´õ ÀÔ·Â
+			if (con.equals("Y")) // yì¼ë•Œë§Œ. í•œë²ˆ ë” ì…ë ¥
 			{
 				i++;
-				System.out.print("¢º Á¦¿ÜÇÒ [ÅäÇÎ]Àç·á ÀÔ·Â (ÃÖ´ë 2°³) : ");
+				System.out.print("â–¶ ì œì™¸í•  [í† í•‘]ì¬ë£Œ ì…ë ¥ (ìµœëŒ€ 2ê°œ) : ");
 				limitTop [i] = br.readLine();
 			}
 			System.out.println();
@@ -147,17 +147,17 @@ public class URandomSalad
 		}
 		catch (NumberFormatException e)
 		{
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 		}
 
-		// ¡Ú IOException ¿¹¿ÜÃ³¸®
+		// â˜… IOException ì˜ˆì™¸ì²˜ë¦¬
 		catch (IOException e)
 		{
 		}
 
 	}  //end limitCal()
 
-	// ÀüÃ¼ Àç·á ´ã±â ´º¹öÀü....
+	// ì „ì²´ ì¬ë£Œ ë‹´ê¸° ë‰´ë²„ì „....
     public void cancel()
 	{
 
@@ -172,34 +172,34 @@ public class URandomSalad
 			}
 		}
 
-		// ¸ŞÀÎÀç·á Á¦°Å
+		// ë©”ì¸ì¬ë£Œ ì œê±°
 		for (int i=0; i<mTemp.size(); i++)
 		{
 			for (int j=0; j<1; j++)
 			{
-				// ÀüÃ¼ Àç·á¿¡¼­ ÀÔ·Â¹ŞÀº °ª Á¦°Å
+				// ì „ì²´ ì¬ë£Œì—ì„œ ì…ë ¥ë°›ì€ ê°’ ì œê±°
 				if (mTemp.get(i).name.equals(limitMain) || mTemp.get(i).num <1 )
 					mTemp.remove(mTemp.get(i));
 			}
 		}
 
-		// ¾ßÃ¤Àç·á Á¦°Å 
+		// ì•¼ì±„ì¬ë£Œ ì œê±° 
 		for (int i=0; i<limitVeg.length; i++)
 		{
 			for (int j=0; j<vTemp.size(); j++)
 			{
-				// ÀüÃ¼ Àç·á¿¡¼­ ÀÔ·Â¹ŞÀº °ª Á¦°Å
+				// ì „ì²´ ì¬ë£Œì—ì„œ ì…ë ¥ë°›ì€ ê°’ ì œê±°
 				if (vTemp.get(j).name.equals(limitVeg[i]) || vTemp.get(j).num <1 )
 					vTemp.remove(vTemp.get(j));
 			}
 		}
 
-		// ÅäÇÎÀç·á Á¦°Å
+		// í† í•‘ì¬ë£Œ ì œê±°
 		for (int i=0; i<limitTop.length; i++)
 		{
 			for (int j=0; j<tTemp.size(); j++)
 			{
-				// ÀüÃ¼ Àç·á¿¡¼­ ÀÔ·Â¹ŞÀº °ª Á¦°Å
+				// ì „ì²´ ì¬ë£Œì—ì„œ ì…ë ¥ë°›ì€ ê°’ ì œê±°
 				if (tTemp.get(j).name.equals(limitTop[i]) || tTemp.get(j).num <1)
 					tTemp.remove(tTemp.get(j));
 			}
@@ -211,29 +211,29 @@ public class URandomSalad
 	public void randomRun() throws IOException
 	{
 		TempStation ts = new TempStation();
-		// Àç·á ·£´ıÀ¸·Î °í¸£±â
-		// ¸ŞÀÎ 1
-		// ¾ç»óÃß´Â 1 or 2 
-		// ¾ç»óÃß¸¦ Á¦¿ÜÇÑ ¾ßÃ¤·ù ¿¡¼­ 1 ~ 5 
-		// ¼Ò½º·ù 1 
+		// ì¬ë£Œ ëœë¤ìœ¼ë¡œ ê³ ë¥´ê¸°
+		// ë©”ì¸ 1
+		// ì–‘ìƒì¶”ëŠ” 1 or 2 
+		// ì–‘ìƒì¶”ë¥¼ ì œì™¸í•œ ì•¼ì±„ë¥˜ ì—ì„œ 1 ~ 5 
+		// ì†ŒìŠ¤ë¥˜ 1 
 		 
-		// ¨ç ¾î¶² Àç·áÀÏÁö, ¨è ¸î ¹ø ³ª¿ÃÁö ·£´ı.
-		// ¸ğµç Àç·áÀÇ Ä®·Î¸® ÇÕÀÌ Á¦ÇÑÀ» ³ÑÁö¾Êµµ·Ï
+		// â‘  ì–´ë–¤ ì¬ë£Œì¼ì§€, â‘¡ ëª‡ ë²ˆ ë‚˜ì˜¬ì§€ ëœë¤.
+		// ëª¨ë“  ì¬ë£Œì˜ ì¹¼ë¡œë¦¬ í•©ì´ ì œí•œì„ ë„˜ì§€ì•Šë„ë¡
 
-		// ·£´ıÀ¸·Î »Ì±â ½ÃÀÛ
+		// ëœë¤ìœ¼ë¡œ ë½‘ê¸° ì‹œì‘
 		Random rd = new Random();
 		do
 		{
 			ranTemp.clear();
 			sumkcal = 0;
 			
-			// ¡Ø ¸ŞÀÎ°ú ¼Ò½º : ¹«Á¶°Ç 1°³ 
+			// â€» ë©”ì¸ê³¼ ì†ŒìŠ¤ : ë¬´ì¡°ê±´ 1ê°œ 
 			ranTemp.add(mTemp.get(rd.nextInt(mTemp.size())));
 			ranTemp.add(sTemp.get(rd.nextInt(sTemp.size())));
 			//                 ---------------------------
-			//                 ·£´ıÀ¸·Î 1Á¾·ù »Ì¾Æ¼­ ranTemp(¸ŞÀÎ±×¸©)¿¡ ´ã±â
+			//                 ëœë¤ìœ¼ë¡œ 1ì¢…ë¥˜ ë½‘ì•„ì„œ ranTemp(ë©”ì¸ê·¸ë¦‡)ì— ë‹´ê¸°
 
-			// ¡Ø ¾ßÃ¤¿Í ÅäÇÎ : Á¾·ùµµ ·£´ı, È½¼öµµ ·£´ı
+			// â€» ì•¼ì±„ì™€ í† í•‘ : ì¢…ë¥˜ë„ ëœë¤, íšŸìˆ˜ë„ ëœë¤
 			for (int i=0; i<rd.nextInt(5)+1; i++)
 			{
 				int idx = rd.nextInt(vTemp.size());		
@@ -245,7 +245,7 @@ public class URandomSalad
 				ranTemp.add(tTemp.get(idx));
 			}
 	 
-	 		// ÃÑ ÇÕ Ä®·Î¸® °è»ê
+	 		// ì´ í•© ì¹¼ë¡œë¦¬ ê³„ì‚°
 			for (int i=0; i<ranTemp.size(); i++)
 				sumkcal += ranTemp.get(i).kcal;
 		}
