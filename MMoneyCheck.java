@@ -39,7 +39,7 @@ public class MMoneyCheck // 매출 확인 클래스
 				sumMPay += (Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money);
 			}
 		}
-		System.out.println("│		                         │");
+		System.out.println("│		                         │"); 
 		System.out.println("│      --------------------------        │");
 		System.out.println("│		                         │");
 		System.out.println("│		                         │");
