@@ -36,7 +36,7 @@ public class MMoneyChange
 			}
 			while (changenum[i] >100 ||  changenum[i]<=0);
 		}
-		System.out.println();
+		System.out.println(); 
 		realChange(); 
 
 	}
