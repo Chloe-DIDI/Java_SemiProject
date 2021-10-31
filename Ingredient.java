@@ -1,19 +1,19 @@
 
 public class Ingredient
 {
-	public int cate;	//Ä«Å×°í¸®
-	public String name;	// Àç·á¸í
-	public int num;		// ¼ö·®
-	public int kcal;	// Ä®·Î¸®
-	public int money;	// ±Ý¾×
+	public int cate;	//ì¹´í…Œê³ ë¦¬
+	public String name;	// ìž¬ë£Œëª…
+	public int num;		// ìˆ˜ëŸ‰
+	public int kcal;	// ì¹¼ë¡œë¦¬
+	public int money;	// ê¸ˆì•¡
 
 	public Ingredient(int cate, String name, int num, int kcal, int money)
 	{
-		this.cate = cate;		// Ä«Å×°í¸®
-		this.name = name;		// Àç·á¸í
-		this.num = num;			// ¼ö·®
-		this.kcal = kcal;		// Ä®·Î¸®
-		this.money = money;		// ±Ý¾×
+		this.cate = cate;		// ì¹´í…Œê³ ë¦¬
+		this.name = name;		// ìž¬ë£Œëª…
+		this.num = num;			// ìˆ˜ëŸ‰
+		this.kcal = kcal;		// ì¹¼ë¡œë¦¬
+		this.money = money;		// ê¸ˆì•¡
 	}
 
-}
+} 
