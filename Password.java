@@ -11,34 +11,34 @@ public class Password
 	public static String con;
 
 
-	static // static ÃÊ±âÈ­ ºí·°
+	static // static ì´ˆê¸°í™” ë¸”ëŸ­
 	{
-		// BufferedReader ÀÎ½ºÅÏ½º »ı¼º
+		// BufferedReader ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		br = new BufferedReader(new InputStreamReader(System.in));
 
-		// »ç¿ëÀÚ ÀÔ·Â°ª ÃÊ±âÈ­
+		// ì‚¬ìš©ì ì…ë ¥ê°’ ì´ˆê¸°í™”
 		sel = 1;
 		op = "+";
 		con = "Y";
 	}
 
 
-	public void inputPass() throws IOException // ÆĞ½º¿öµå ÀÔ·Â ¸Ş¼Òµå
+	public void inputPass() throws IOException // íŒ¨ìŠ¤ì›Œë“œ ì…ë ¥ ë©”ì†Œë“œ
 	{
-		// ÆĞ½º¿öµå, ÀÔ·ÂÈ½¼ö º¯¼ö
+		// íŒ¨ìŠ¤ì›Œë“œ, ì…ë ¥íšŸìˆ˜ ë³€ìˆ˜
 		int pass;
 		int count=1;
 
-		do	// ÆĞ½º¿öµå ÀÔ·Â½Ã ¹İº¹¹® ºüÁ®³ª¿À°í
-		{	// 5È¸ ÀÌ»ó ÀÔ·Â ½ÇÆĞ½Ã ÇÁ·Î±×·¥ Á¾·á
+		do	// íŒ¨ìŠ¤ì›Œë“œ ì…ë ¥ì‹œ ë°˜ë³µë¬¸ ë¹ ì ¸ë‚˜ì˜¤ê³ 
+		{	// 5íšŒ ì´ìƒ ì…ë ¥ ì‹¤íŒ¨ì‹œ í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 			System.out.println("=============================================================");
-			System.out.println();
-			System.out.print("ÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä (Hint_ ¿ì¸®°¡ Ã³À½ ¸¸³­ ³¯ ¡Ù) : ");
+			System.out.println(); 
+			System.out.print("íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš” (Hint_ ìš°ë¦¬ê°€ ì²˜ìŒ ë§Œë‚œ ë‚  â˜†) : ");
 			pass = Integer.parseInt(br.readLine());
 			count++;
 			if (count>5)
 			{
-				System.out.println("ÀÔ·ÂÈ½¼ö¸¦ ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+				System.out.println("ì…ë ¥íšŸìˆ˜ë¥¼ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
 				exit();
 			}
 		}
@@ -46,66 +46,66 @@ public class Password
 	}
 
 
-	public void modePrint() // ¸Ş´º Ãâ·Â ¸Ş¼Òµå
+	public void modePrint() // ë©”ë‰´ ì¶œë ¥ ë©”ì†Œë“œ
 	{
 		System.out.println();
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢             [¸Ş´º Ãâ·Â]                 ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢            1. °ü¸®ÀÚ ¸ğµå               ¦¢");
-		System.out.println("¦¢            2. ÆÇ¸Å ¸ğµå                 ¦¢");
-		System.out.println("¦¢            3. Á¾·á                      ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¢                                         ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚             [ë©”ë‰´ ì¶œë ¥]                 â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚            1. ê´€ë¦¬ì ëª¨ë“œ               â”‚");
+		System.out.println("â”‚            2. íŒë§¤ ëª¨ë“œ                 â”‚");
+		System.out.println("â”‚            3. ì¢…ë£Œ                      â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â”‚                                         â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 	}
 
 
-	public void modeSelect() throws IOException // ¸Ş´º ¼±ÅÃ ¸Ş¼Òµå
+	public void modeSelect() throws IOException // ë©”ë‰´ ì„ íƒ ë©”ì†Œë“œ
 	{
-		do	// 1~3 ¿Ü¿¡ ´Ù¸¥ °ªÀ» ³ÖÀ¸¸é ¹İº¹
+		do	// 1~3 ì™¸ì— ë‹¤ë¥¸ ê°’ì„ ë„£ìœ¼ë©´ ë°˜ë³µ
 		{
-			System.out.print(">> ¸Ş´º ¼±ÅÃ(1~3) : ");
+			System.out.print(">> ë©”ë‰´ ì„ íƒ(1~3) : ");
 			sel = Integer.parseInt(br.readLine());
 		}
 		while (sel<1 || sel>3);
 	}
 
 
-	public void modeRun() throws IOException // ¸Ş´º È£Ãâ ¸Ş¼Òµå
+	public void modeRun() throws IOException // ë©”ë‰´ í˜¸ì¶œ ë©”ì†Œë“œ
 	{
-		// ManagerMode ÀÎ½ºÅÏ½º »ı¼º
+		// ManagerMode ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		ManagerMode mm = new ManagerMode();
 		
 		UserMode um = new UserMode();
 
-		switch (sel)	// ÀÔ·Â¹ŞÀº °ª¿¡ µû¶ó ½ÇÇà
+		switch (sel)	// ì…ë ¥ë°›ì€ ê°’ì— ë”°ë¼ ì‹¤í–‰
 		{
-			case Menus.E_ONE :						// °ü¸®ÀÚ ¸ğµå·Î
+			case Menus.E_ONE :						// ê´€ë¦¬ì ëª¨ë“œë¡œ
 				{
 					mm.mMenuPrint();
 					mm.mMenuSelect();
 					mm.mMenuRun();
 				} break;
-			case Menus.E_TWO :						// ÆÇ¸Å ¸ğµå·Î
+			case Menus.E_TWO :						// íŒë§¤ ëª¨ë“œë¡œ
 				{
 					um.uMenuPrint();
 					um.uMenuSelect();
 					um.uMenuRun();
 				} break;
-			case Menus.E_THREE : exit(); break;		// ÇÁ·Î±×·¥ Á¾·á
-			default : System.out.println(">> ¸Ş´º ¼±ÅÃ ¿À·ù~!!!"); break;
+			case Menus.E_THREE : exit(); break;		// í”„ë¡œê·¸ë¨ ì¢…ë£Œ
+			default : System.out.println(">> ë©”ë‰´ ì„ íƒ ì˜¤ë¥˜~!!!"); break;
 		}
 
 	}
 
-	public void exit() // ½Ã½ºÅÛ Á¾·á ¸Ş¼Òµå
+	public void exit() // ì‹œìŠ¤í…œ ì¢…ë£Œ ë©”ì†Œë“œ
 	{
 		System.out.println();
-		System.out.println("<<Àü¿øÀÌ Á¾·áµË´Ï´Ù.ºü¡è¹ã¡é¢İ>>");
+		System.out.println("<<ì „ì›ì´ ì¢…ë£Œë©ë‹ˆë‹¤.ë¹ â†‘ë°¤â†“â™¬>>");
 		System.out.println();
 		System.out.println();
 		System.out.println();
