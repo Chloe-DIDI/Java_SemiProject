@@ -4,27 +4,27 @@ import java.io.IOException;
 
 public class MStorageNew
 {
-	String name;				// Ãß°¡ Ç°¸ñ ÀÌ¸§ º¯¼ö
-	int cate,num,kcal,money;	// Ãß°¡ Ç°¸ñ Ä«Å×°í¸®, ¼ö·®, Ä®·Î¸®, ±İ¾× º¯¼ö
+	String name;				// ì¶”ê°€ í’ˆëª© ì´ë¦„ ë³€ìˆ˜
+	int cate,num,kcal,money;	// ì¶”ê°€ í’ˆëª© ì¹´í…Œê³ ë¦¬, ìˆ˜ëŸ‰, ì¹¼ë¡œë¦¬, ê¸ˆì•¡ ë³€ìˆ˜
 
 	private static Scanner sc;
 	private static ManagerMode mm;
 
 	static
 	{
-		// Scanner ÀÎ½ºÅÏ½º »ı¼º
+		// Scanner ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		 sc = new Scanner(System.in);
 
-		// ManagerMode ÀÎ½ºÅÏ½º »ı¼º
+		// ManagerMode ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		 mm = new ManagerMode();
 	}
 
 
-	public void mAddRemove() throws IOException // Ç°¸ñ Ãß°¡/ »èÁ¦ ¸Ş¼Òµå
+	public void mAddRemove() throws IOException // í’ˆëª© ì¶”ê°€/ ì‚­ì œ ë©”ì†Œë“œ
 	{
-		System.out.println("Ç°¸ñ Ãß°¡/»èÁ¦ ");
+		System.out.println("í’ˆëª© ì¶”ê°€/ì‚­ì œ ");
 
-		System.out.print("Ç°¸ñ Ãß°¡ ½Ã(+), »èÁ¦(-) ½Ã ÀÔ·Â : ");
+		System.out.print("í’ˆëª© ì¶”ê°€ ì‹œ(+), ì‚­ì œ(-) ì‹œ ì…ë ¥ : ");
 		Password.op = sc.next();
 
 		switch (Password.op)
@@ -35,86 +35,86 @@ public class MStorageNew
 	}//end mAddRemove()
 
 
-	public void mNewAdd() throws IOException // Ãß°¡ ¸Ş¼Òµå
+	public void mNewAdd() throws IOException // ì¶”ê°€ ë©”ì†Œë“œ
 	{
-		// »õ·Î Ãß°¡ÇÒ Ç°¸ñÀÇ Ä«Å×°í¸®, Ç°¸ñ¸í, ¼ö·®, Ä®·Î¸®, ±İ¾× ÀÔ·Â
-		System.out.println("(¾ßÃ¤ : 1, ¸ŞÀÎ : 2, ¼Ò½º : 3, ÅäÇÎ : 4)");
-		System.out.print("»õ·Î¿î Ç°¸ñÀÇ Ä«Å×°í¸®¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		// ìƒˆë¡œ ì¶”ê°€í•  í’ˆëª©ì˜ ì¹´í…Œê³ ë¦¬, í’ˆëª©ëª…, ìˆ˜ëŸ‰, ì¹¼ë¡œë¦¬, ê¸ˆì•¡ ì…ë ¥
+		System.out.println("(ì•¼ì±„ : 1, ë©”ì¸ : 2, ì†ŒìŠ¤ : 3, í† í•‘ : 4)");
+		System.out.print("ìƒˆë¡œìš´ í’ˆëª©ì˜ ì¹´í…Œê³ ë¦¬ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		cate = sc.nextInt();
 
- 		System.out.print("¢º Ç°¸ñ¸íÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+ 		System.out.print("â–¶ í’ˆëª©ëª…ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		name = sc.next();
 
-		System.out.print("¢º ¼ö·®À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("â–¶ ìˆ˜ëŸ‰ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		num = sc.nextInt();
 
-		System.out.print("¢º Ä®·Î¸®¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("â–¶ ì¹¼ë¡œë¦¬ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		kcal = sc.nextInt();
 
-		System.out.print("¢º ±İ¾×À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("â–¶ ê¸ˆì•¡ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		money = sc.nextInt();
 			
 		System.out.println();
-		System.out.println(" [Ç°¸ñ¸í] [¼ö·®] [Ä®·Î¸®] [±İ¾×]");	
-		System.out.printf("%5s %4d %4dkcal %5d¿ø",name,num,kcal,money);
+		System.out.println(" [í’ˆëª©ëª…] [ìˆ˜ëŸ‰] [ì¹¼ë¡œë¦¬] [ê¸ˆì•¡]");	
+		System.out.printf("%5s %4d %4dkcal %5dì›",name,num,kcal,money);
 
 		System.out.println();
-		System.out.print("Á¤¸»·Î Ãß°¡ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+		System.out.print("ì •ë§ë¡œ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 		Password.con = sc.next().toUpperCase();
  
-		if (Password.con.equals("Y"))	// Y ÀÔ·ÂÇÑ °æ¿ì
-		{								// vº¤ÅÍ¿¡ Ç°¸ñ Ãß°¡
+		if (Password.con.equals("Y"))	// Y ì…ë ¥í•œ ê²½ìš°
+		{								// vë²¡í„°ì— í’ˆëª© ì¶”ê°€
 			ISetup.v.add(new Ingredient(cate,name,num,kcal,money));
 
-			System.out.printf("\n<<%sÇ°¸ñÀÌ Ãß°¡µÇ¾ú½À´Ï´Ù.>>\n",name);
+			System.out.printf("\n<<%sí’ˆëª©ì´ ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.>>\n",name);
 
-			mStorageNewReturn();	// Ç°¸ñ Ãß°¡/»èÁ¦ °è¼Ó ¹°¾îº¸´Â ¸Ş¼Òµå È£Ãâ
+			mStorageNewReturn();	// í’ˆëª© ì¶”ê°€/ì‚­ì œ ê³„ì† ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ í˜¸ì¶œ
 		}
 		else
 		{
-			System.out.println("Ãß°¡°¡ Ãë¼ÒµÇ¾ú½À´Ï´Ù");
+			System.out.println("ì¶”ê°€ê°€ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤");
 
-			mStorageNewReturn();	// Ç°¸ñ Ãß°¡/»èÁ¦ °è¼Ó ¹°¾îº¸´Â ¸Ş¼Òµå È£Ãâ
+			mStorageNewReturn();	// í’ˆëª© ì¶”ê°€/ì‚­ì œ ê³„ì† ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ í˜¸ì¶œ
 		}						
 
 	}//end mNewAdd()
 
 
-	public void mNewRemove() throws IOException	// Ç°¸ñ Á¦°Å ¸Ş¼Òµå
+	public void mNewRemove() throws IOException	// í’ˆëª© ì œê±° ë©”ì†Œë“œ
 	{	
-		System.out.print("Á¦°ÅÇÒ Ç°¸ñ¸íÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("ì œê±°í•  í’ˆëª©ëª…ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		name = sc.next();
 
-		for (int i=0; i<ISetup.v.size(); i++)		// vº¤ÅÍ¸¦ µ¹¸é¼­
+		for (int i=0; i<ISetup.v.size(); i++)		// vë²¡í„°ë¥¼ ëŒë©´ì„œ
 		{
-			if (ISetup.v.get(i).name.equals(name))	// ÀÔ·ÂÇÑ Ç°¸ñ°ú ÀÏÄ¡ÇÏ´Â Ç°¸ñÀ» Ã£¾Æ¼­
-			{										// Á¦Ç°¸íÀÌ ÀÏÄ¡ÇÒ °æ¿ì Ç°¸ñ Á¦°Å
+			if (ISetup.v.get(i).name.equals(name))	// ì…ë ¥í•œ í’ˆëª©ê³¼ ì¼ì¹˜í•˜ëŠ” í’ˆëª©ì„ ì°¾ì•„ì„œ
+			{										// ì œí’ˆëª…ì´ ì¼ì¹˜í•  ê²½ìš° í’ˆëª© ì œê±°
 				ISetup.v.remove(i);
 
-				System.out.printf("\n<<%sÇ°¸ñÀÌ Á¦°ÅµÇ¾ú½À´Ï´Ù.>>\n",name);
+				System.out.printf("\n<<%sí’ˆëª©ì´ ì œê±°ë˜ì—ˆìŠµë‹ˆë‹¤.>>\n",name);
 
-				mStorageNewReturn();	// Ç°¸ñ Ãß°¡/»èÁ¦ °è¼Ó ¹°¾îº¸´Â ¸Ş¼Òµå È£Ãâ
+				mStorageNewReturn();	// í’ˆëª© ì¶”ê°€/ì‚­ì œ ê³„ì† ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ í˜¸ì¶œ
 			}
 		}
 
 	}//end mNewRemove()
 
 
-	public void mStorageNewReturn() throws IOException	// Ç°¸ñ Ãß°¡/»èÁ¦ °è¼Ó ¹°¾îº¸´Â ¸Ş¼Òµå
+	public void mStorageNewReturn() throws IOException	// í’ˆëª© ì¶”ê°€/ì‚­ì œ ê³„ì† ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ
 	{
 
-		System.out.print("Ç°¸ñ Ãß°¡/»èÁ¦¸¦ °è¼Ó ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+		System.out.print("í’ˆëª© ì¶”ê°€/ì‚­ì œë¥¼ ê³„ì† í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 		Password.con = sc.next().toUpperCase();
 
 		Password pw = new Password();
 
-		if (Password.con.equals("Y"))	// Y ÀÔ·ÂÇÑ °æ¿ì
-			mAddRemove();				// Ç°¸ñ Ãß°¡/»èÁ¦ Àç½ÇÇà
+		if (Password.con.equals("Y"))	// Y ì…ë ¥í•œ ê²½ìš°
+			mAddRemove();				// í’ˆëª© ì¶”ê°€/ì‚­ì œ ì¬ì‹¤í–‰
 		else
 			pw.modePrint();
 			pw.modeSelect();
-			pw.modeRun();				// ¾Æ´Ò°æ¿ì °ü¸®ÀÚ ¸ğµå·Î
-		//else => °ü¸®ÀÚ ¸ğµå·Î °¡±â &&
+			pw.modeRun();				// ì•„ë‹ê²½ìš° ê´€ë¦¬ì ëª¨ë“œë¡œ
+		//else => ê´€ë¦¬ì ëª¨ë“œë¡œ ê°€ê¸° &&
 	}//end mStorageNewReturn()
 
-}//end class
+}//end class 
