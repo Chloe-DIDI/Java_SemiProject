@@ -60,8 +60,8 @@ class UserMode extends TempStation
 		System.out.println("└─────────────────────────────────────────┘");
 		System.out.print(" >> 메뉴 선택(1~4) : ");
 	}
-
-	// 완성
+ 
+	// 완성 
 	// 메뉴 선택 메소드
 	public void uMenuSelect() throws IOException
 	{
