@@ -30,7 +30,7 @@ public class URandomSalad
 
 
    // 칼로리와 재료 입력
-   public void limitCal()
+   public void limitCal() 
    { 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Scanner sc = new Scanner(System.in);
