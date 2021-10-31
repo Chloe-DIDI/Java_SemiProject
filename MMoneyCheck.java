@@ -2,14 +2,14 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.Collections;
+import java.util.Collections; 
 
-public class MMoneyCheck // ¸ÅÃâ È®ÀÎ Å¬·¡½º
+public class MMoneyCheck // ë§¤ì¶œ í™•ì¸ í´ë˜ìŠ¤
 {
 	private static Scanner sc;
 	private static ManagerMode mm;
 	
-	public int sumMPay;	// ´©Àû º¯¼ö
+	public int sumMPay;	// ëˆ„ì  ë³€ìˆ˜
 
 	static
 	{
@@ -21,107 +21,107 @@ public class MMoneyCheck // ¸ÅÃâ È®ÀÎ Å¬·¡½º
 	
 	public void mMoneyPrint()
 	{
-		System.out.println("\n             [¸ÅÃâ È®ÀÎ]");
+		System.out.println("\n             [ë§¤ì¶œ í™•ì¸]");
 		
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢               [¾ßÃ¤]                   ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		int sumMPay = 0;      // ¸ÅÃâ ´©Àû º¯¼ö
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚               [ì•¼ì±„]                   â”‚");
+		System.out.println("â”‚		                         â”‚");
+		int sumMPay = 0;      // ë§¤ì¶œ ëˆ„ì  ë³€ìˆ˜
 
 		for (int i=0; i<ISetup.v.size(); i++)
 		{
 			if (ISetup.v.get(i).cate == 1)
 			{
-				System.out.printf("¦¢	%-6s\t %3d°³\t %,5d¿ø ¦¢\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
+				System.out.printf("â”‚	%-6s\t %3dê°œ\t %,5dì› â”‚\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
 												(Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money));
 				sumMPay += (Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money);
 			}
 		}
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢      --------------------------        ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢               [¸ŞÀÎ]                   ¦¢");
-		System.out.println("¦¢		                         ¦¢");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚      --------------------------        â”‚");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚               [ë©”ì¸]                   â”‚");
+		System.out.println("â”‚		                         â”‚");
 		for (int i=0; i<ISetup.v.size(); i++)
 		{
 			if (ISetup.v.get(i).cate == 2)
 			{
-				System.out.printf("¦¢	%-6s\t %3d°³\t %,5d¿ø ¦¢\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
+				System.out.printf("â”‚	%-6s\t %3dê°œ\t %,5dì› â”‚\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
 												(Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money));
 				sumMPay += (Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money);
 			}
 		}
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢      --------------------------        ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢               [¼Ò½º]                   ¦¢");
-		System.out.println("¦¢		                         ¦¢");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚      --------------------------        â”‚");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚               [ì†ŒìŠ¤]                   â”‚");
+		System.out.println("â”‚		                         â”‚");
 		for (int i=0; i<ISetup.v.size(); i++)
 		{
 			if (ISetup.v.get(i).cate == 3)
 			{
-				System.out.printf("¦¢	%-6s\t %3d°³\t %,5d¿ø ¦¢\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
+				System.out.printf("â”‚	%-6s\t %3dê°œ\t %,5dì› â”‚\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
 												(Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money));
 				sumMPay += (Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money);
 			}
 		}
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢      --------------------------        ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¢               [ÅäÇÎ]                   ¦¢");
-		System.out.println("¦¢		                         ¦¢");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚      --------------------------        â”‚");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â”‚               [í† í•‘]                   â”‚");
+		System.out.println("â”‚		                         â”‚");
 		for (int i=0; i<ISetup.v.size(); i++)
 		{
 			if (ISetup.v.get(i).cate == 4)
 			{
-				System.out.printf("¦¢	%-6s\t %3d°³\t %,5d¿ø ¦¢\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
+				System.out.printf("â”‚	%-6s\t %3dê°œ\t %,5dì› â”‚\n", ISetup.v.get(i).name, Collections.frequency(ISetup.payArray, ISetup.v.get(i).name), 
 												(Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money));
 				sumMPay += (Collections.frequency(ISetup.payArray, ISetup.v.get(i).name) * ISetup.v.get(i).money);
 			}
 		}
-		System.out.println("¦¢		                         ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”‚		                         â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 
-		// 2. ÃÑ ¸ÅÃâ Ãâ·Â
+		// 2. ì´ ë§¤ì¶œ ì¶œë ¥
 		System.out.println();
-		System.out.printf("¢º ÃÑ ¸ÅÃâ : %,5d¿ø\n", sumMPay); 
+		System.out.printf("â–¶ ì´ ë§¤ì¶œ : %,5dì›\n", sumMPay); 
 
 
 	}//end mMoneyPrint()
 
 
-	public void mMoneyCal() throws IOException	//ÃÑ ÅõÀÔ±İ¾× È®ÀÎ ¹× Ãâ±İ 
+	public void mMoneyCal() throws IOException	//ì´ íˆ¬ì…ê¸ˆì•¡ í™•ì¸ ë° ì¶œê¸ˆ 
 	{
 		UserMode um = new UserMode();
 
-		//pay´©Àû ÀßºÒ·¯¿À±â~!!!!!!!!!!!!!!!!!!!!!!!!
+		//payëˆ„ì  ì˜ë¶ˆëŸ¬ì˜¤ê¸°~!!!!!!!!!!!!!!!!!!!!!!!!
 		System.out.println("");
 
-		int sumMPay = 0;	// ´©Àû º¯¼ö
+		int sumMPay = 0;	// ëˆ„ì  ë³€ìˆ˜
 		
 		for (int i=1; i<um.count + 1;i++ )
 			sumMPay += ISetup.payNum.get(i);
 		
-		System.out.printf("¢º ÃÑ ÅõÀÔ ±İ¾× : %,5d¿ø ÀÔ´Ï´Ù.", sumMPay);
+		System.out.printf("â–¶ ì´ íˆ¬ì… ê¸ˆì•¡ : %,5dì› ì…ë‹ˆë‹¤.", sumMPay);
 
-		// Ãâ±İÇÏ±â
-		System.out.println("\n¡ÚÃâ±İ ¿©ºÎ È®ÀÎ ÈÄ [°ü¸®ÀÚ ¸ğµå]·Î µ¹¾Æ°©´Ï´Ù.¡Ú");
-		System.out.println("¡Ú°æ°í! µÇµ¹¸± ¼ö ¾ø½À´Ï´Ù.¡Ú");
-		System.out.print("  Ãâ±İ ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+		// ì¶œê¸ˆí•˜ê¸°
+		System.out.println("\nâ˜…ì¶œê¸ˆ ì—¬ë¶€ í™•ì¸ í›„ [ê´€ë¦¬ì ëª¨ë“œ]ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.â˜…");
+		System.out.println("â˜…ê²½ê³ ! ë˜ëŒë¦´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.â˜…");
+		System.out.print("  ì¶œê¸ˆ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 		String real = sc.next().toUpperCase();
 
-		if (real.equals("Y"))				// UpperClass ·Î ÇÏ±â
+		if (real.equals("Y"))				// UpperClass ë¡œ í•˜ê¸°
 		{
-			System.out.println(sumMPay + "¿øÀÌ Ãâ±İ µÇ¾ú½À´Ï´Ù.");
+			System.out.println(sumMPay + "ì›ì´ ì¶œê¸ˆ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			sumMPay = 0;
 		}
 
-		mm.mMenuPrint(); //Ãâ±İ¿©ºÎ °ü°è¾øÀÌ °ü¸®ÀÚ¸ğµå·Î...
+		mm.mMenuPrint(); //ì¶œê¸ˆì—¬ë¶€ ê´€ê³„ì—†ì´ ê´€ë¦¬ìëª¨ë“œë¡œ...
 		mm.mMenuSelect();
 		mm.mMenuRun();
 
