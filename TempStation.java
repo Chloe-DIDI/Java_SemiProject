@@ -12,4 +12,4 @@ public class TempStation
 			this.temp.addElement(temp.get(i));
 		}
 	}
-}
+} 
