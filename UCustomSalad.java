@@ -22,7 +22,7 @@ public class UCustomSalad
 	static
 	{
 		br = new BufferedReader(new InputStreamReader(System.in));
-
+ 
 		sc = new Scanner(System.in);
 	} 
 
