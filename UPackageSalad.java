@@ -3,8 +3,8 @@ import java.util.Scanner;
 import java.io.IOException;
 
 
-// ¼¼Æ®ÇÒÀÎ
-// ÆĞÅ°Áö »ø·¯µå Å¬·¡½º
+// ì„¸íŠ¸í• ì¸
+// íŒ¨í‚¤ì§€ ìƒëŸ¬ë“œ í´ë˜ìŠ¤
 public class UPackageSalad
 {
 	static Vector<Ingredient> salmon = new Vector<Ingredient>();
@@ -13,49 +13,49 @@ public class UPackageSalad
 
 	TempStation ts = new TempStation();
 
-	public static void uPackageStock() // ¸Ş´º ±¸¼º ¸Ş¼Òµå
+	public static void uPackageStock() // ë©”ë‰´ êµ¬ì„± ë©”ì†Œë“œ
 	{
-		// ÇöÀç Àç°í ¼ö·®À¸·Î ³ª¿À°Ô ¼öÁ¤ ÇØ¾ßÇÔ
+		// í˜„ì¬ ì¬ê³  ìˆ˜ëŸ‰ìœ¼ë¡œ ë‚˜ì˜¤ê²Œ ìˆ˜ì • í•´ì•¼í•¨
 			
-		// ¿¬¾î »ø·¯µå : ¿¬¾î, ¾ç»óÃß, ´ç±Ù, ¾çÆÄ, ¿À¸®¿£Å», ¹æÅä (-500¿ø)
-		salmon.add(ISetup.v.get(5));	// ¿¬¾î
-		salmon.add(ISetup.v.get(0));	// ¾ç»óÃß
-		salmon.add(ISetup.v.get(1));	// ´ç±Ù				
-		salmon.add(ISetup.v.get(2));	// ¹æÅä
-		salmon.add(ISetup.v.get(3));	// ¾çÆÄ
-		salmon.add(ISetup.v.get(9));	// ¿À¸®¿£Å»
+		// ì—°ì–´ ìƒëŸ¬ë“œ : ì—°ì–´, ì–‘ìƒì¶”, ë‹¹ê·¼, ì–‘íŒŒ, ì˜¤ë¦¬ì—”íƒˆ, ë°©í†  (-500ì›)
+		salmon.add(ISetup.v.get(5));	// ì—°ì–´
+		salmon.add(ISetup.v.get(0));	// ì–‘ìƒì¶”
+		salmon.add(ISetup.v.get(1));	// ë‹¹ê·¼				
+		salmon.add(ISetup.v.get(2));	// ë°©í† 
+		salmon.add(ISetup.v.get(3));	// ì–‘íŒŒ
+		salmon.add(ISetup.v.get(9));	// ì˜¤ë¦¬ì—”íƒˆ
 
-		// ÄÉÀÌÁØ »ø·¯µå : ÄÉÀÌÁØ, Çã´Ï¸Ó½ºÅ¸µå, ¾ç»óÃß, ¹æÅä, ´ç±Ù (-500¿ø)
-		cajun.add(ISetup.v.get(6));		// ÄÉÀÌÁØ
-		cajun.add(ISetup.v.get(11));	// Çã´Ï¸Ó½ºÅ¸µå
-		cajun.add(ISetup.v.get(0));		// ¾ç»óÃß
-		cajun.add(ISetup.v.get(2));		// ¹æ¿ïÅä¸¶Åä
-		cajun.add(ISetup.v.get(1));		// ´ç±Ù
+		// ì¼€ì´ì¤€ ìƒëŸ¬ë“œ : ì¼€ì´ì¤€, í—ˆë‹ˆë¨¸ìŠ¤íƒ€ë“œ, ì–‘ìƒì¶”, ë°©í† , ë‹¹ê·¼ (-500ì›)
+		cajun.add(ISetup.v.get(6));		// ì¼€ì´ì¤€
+		cajun.add(ISetup.v.get(11));	// í—ˆë‹ˆë¨¸ìŠ¤íƒ€ë“œ
+		cajun.add(ISetup.v.get(0));		// ì–‘ìƒì¶”
+		cajun.add(ISetup.v.get(2));		// ë°©ìš¸í† ë§ˆí† 
+		cajun.add(ISetup.v.get(1));		// ë‹¹ê·¼
 
-		// ´ß°¡½¿»ì »ø·¯µå : ¿ÀÀÌ, ´ß°¡½¿»ì, ¾ç»óÃß, ¹æÅä, ´ç±Ù, ¹ß»ç¹Í (-500¿ø)
-		chicbr.add(ISetup.v.get(7));	// ´ß°¡½¿»ì
-		chicbr.add(ISetup.v.get(4));	// ¿ÀÀÌ
-		chicbr.add(ISetup.v.get(0));	// ¾ç»óÃß
-		chicbr.add(ISetup.v.get(2));	// ¹æ¿ïÅä¸¶Åä
-		chicbr.add(ISetup.v.get(8));	// ¹ß»ç¹Í
+		// ë‹­ê°€ìŠ´ì‚´ ìƒëŸ¬ë“œ : ì˜¤ì´, ë‹­ê°€ìŠ´ì‚´, ì–‘ìƒì¶”, ë°©í† , ë‹¹ê·¼, ë°œì‚¬ë¯¹ (-500ì›)
+		chicbr.add(ISetup.v.get(7));	// ë‹­ê°€ìŠ´ì‚´
+		chicbr.add(ISetup.v.get(4));	// ì˜¤ì´
+		chicbr.add(ISetup.v.get(0));	// ì–‘ìƒì¶”
+		chicbr.add(ISetup.v.get(2));	// ë°©ìš¸í† ë§ˆí† 
+		chicbr.add(ISetup.v.get(8));	// ë°œì‚¬ë¯¹
 	}//end uPackageStock()	
 
 
 	public void uPackagePrint()
 	{
 		System.out.println();
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢                                      ¦¢");
-		System.out.println("¦¢                                      ¦¢");
-		System.out.println("¦¢          [ÆĞÅ°Â¡ »ø·¯µå]             ¦¢");
-		System.out.println("¦¢         (ÀÌÀü ¸Ş´º·Î : -1)           ¦¢");
-		System.out.println("¦¢                                      ¦¢");
-		System.out.println("¦¢         1. ¿¬¾î »ø·¯µå               ¦¢");
-		System.out.println("¦¢         2. ÄÉÀÌÁØ »ø·¯µå             ¦¢");
-		System.out.println("¦¢         3. ´ß°¡½¿»ì »ø·¯µå           ¦¢");
-		System.out.println("¦¢                                      ¦¢");
-		System.out.println("¦¢                                      ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚                                      â”‚");
+		System.out.println("â”‚                                      â”‚");
+		System.out.println("â”‚          [íŒ¨í‚¤ì§• ìƒëŸ¬ë“œ]             â”‚");
+		System.out.println("â”‚         (ì´ì „ ë©”ë‰´ë¡œ : -1)           â”‚");
+		System.out.println("â”‚                                      â”‚");
+		System.out.println("â”‚         1. ì—°ì–´ ìƒëŸ¬ë“œ               â”‚");
+		System.out.println("â”‚         2. ì¼€ì´ì¤€ ìƒëŸ¬ë“œ             â”‚");
+		System.out.println("â”‚         3. ë‹­ê°€ìŠ´ì‚´ ìƒëŸ¬ë“œ           â”‚");
+		System.out.println("â”‚                                      â”‚");
+		System.out.println("â”‚                                      â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 	}//end uPackagePrint()
 	
@@ -66,20 +66,20 @@ public class UPackageSalad
 
 		UserMode um = new UserMode();
 
-		// 1. ÆĞÅ°Â¡ »ø·¯µå¸í°ú °¡°İÀ» ³ª¿­ÇÏ¿© Ãâ·Â
-		//À§ÀÇ uPackageStock() ¼ÒÈ¯
+		// 1. íŒ¨í‚¤ì§• ìƒëŸ¬ë“œëª…ê³¼ ê°€ê²©ì„ ë‚˜ì—´í•˜ì—¬ ì¶œë ¥
+		//ìœ„ì˜ uPackageStock() ì†Œí™˜
 		uPackageStock();
 		uPackagePrint();
 		
-		// 2. ±¸¸ÅÀÚ°¡ ±¸¸ÅÇÏ°í ½ÍÀº »ø·¯µåÀÇ ¹øÈ£ ÀÔ·Â
+		// 2. êµ¬ë§¤ìê°€ êµ¬ë§¤í•˜ê³  ì‹¶ì€ ìƒëŸ¬ë“œì˜ ë²ˆí˜¸ ì…ë ¥
 		while (true)
 		{
-			System.out.print("¸Ş´º ¼±ÅÃ : ");
+			System.out.print("ë©”ë‰´ ì„ íƒ : ");
 			Password.sel = sc.nextInt();
 
-			if((Password.sel>0 && Password.sel<4) || Password.sel==-1)		// ¸Ş´º ¹øÈ£ ¿Ã¹Ù¸£°Ô ÀÔ·Â ½Ã
-				break;			    // ¹İº¹¹® Å»Ãâ
-			System.out.println("\nÀÔ·Â¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.\n");	// ¿Ã¹Ù¸£Áö ¾Ê°Ô ÀÔ·Â ½Ã ¸Ş¼¼Áö Ç¥½Ã ÈÄ ´Ù½Ã ÀÔ·Â¹ŞÀ½	
+			if((Password.sel>0 && Password.sel<4) || Password.sel==-1)		// ë©”ë‰´ ë²ˆí˜¸ ì˜¬ë°”ë¥´ê²Œ ì…ë ¥ ì‹œ
+				break;			    // ë°˜ë³µë¬¸ íƒˆì¶œ
+			System.out.println("\nì…ë ¥ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.\n");	// ì˜¬ë°”ë¥´ì§€ ì•Šê²Œ ì…ë ¥ ì‹œ ë©”ì„¸ì§€ í‘œì‹œ í›„ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ	
 		}
 		
 		if (Password.sel == Menus.E_MINUS)
@@ -96,7 +96,7 @@ public class UPackageSalad
 				if (salmon.get(i).num<1)
 				{
 					System.out.printf("[%s] sold out\n", ISetup.v.get(i).name);
-					System.out.printf("´Ù¸¥ ¸Ş´º¸¦ ÀÌ¿ëÇØÁÖ¼¼¿ä. ÁË¼ÛÇÕ´Ï´Ù.");
+					System.out.printf("ë‹¤ë¥¸ ë©”ë‰´ë¥¼ ì´ìš©í•´ì£¼ì„¸ìš”. ì£„ì†¡í•©ë‹ˆë‹¤.");
 					um.uMenuPrint();
 					um.uMenuSelect();
 					um.uMenuRun();
@@ -112,7 +112,7 @@ public class UPackageSalad
 				if (cajun.get(i).num<1)
 				{
 					System.out.printf("[%s] sold out\n", ISetup.v.get(i).name);
-					System.out.printf("´Ù¸¥ ¸Ş´º¸¦ ÀÌ¿ëÇØÁÖ¼¼¿ä. ÁË¼ÛÇÕ´Ï´Ù.");
+					System.out.printf("ë‹¤ë¥¸ ë©”ë‰´ë¥¼ ì´ìš©í•´ì£¼ì„¸ìš”. ì£„ì†¡í•©ë‹ˆë‹¤.");
 					um.uMenuPrint(); 
 					um.uMenuSelect();	
 					um.uMenuRun();   	
@@ -128,11 +128,11 @@ public class UPackageSalad
 				if (chicbr.get(i).num<1)
 				{
 					System.out.printf("[%s] sold out\n", ISetup.v.get(i).name);
-					System.out.printf("´Ù¸¥ ¸Ş´º¸¦ ÀÌ¿ëÇØÁÖ¼¼¿ä. ÁË¼ÛÇÕ´Ï´Ù.");
+					System.out.printf("ë‹¤ë¥¸ ë©”ë‰´ë¥¼ ì´ìš©í•´ì£¼ì„¸ìš”. ì£„ì†¡í•©ë‹ˆë‹¤.");
 					um.uMenuPrint();    
 					um.uMenuSelect();	
 					um.uMenuRun();   	
-				}
+				} 
 			}
 			ts.tStation(chicbr);
 			chicbr.clear();
