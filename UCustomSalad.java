@@ -24,7 +24,7 @@ public class UCustomSalad
 		br = new BufferedReader(new InputStreamReader(System.in));
 
 		sc = new Scanner(System.in);
-	}
+	} 
 
 	// ★
 	// 메뉴 선택 메소드 
