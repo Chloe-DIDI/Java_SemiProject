@@ -13,7 +13,7 @@ public class Salad
 
 		System.out.println();
 		System.out.println();
-		System.out.println("\t\t �Ϸ�~ Power On ");
+		System.out.println("\t\t »Ï·Õ~ Power On ");
 		System.out.println();
 		
 		pw.inputPass();
@@ -22,4 +22,4 @@ public class Salad
 		pw.modeSelect();
 		pw.modeRun();
 	}
-}
+} 
