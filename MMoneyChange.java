@@ -7,58 +7,58 @@ public class MMoneyChange
 	Scanner sc = new Scanner(System.in);
 	//ManagerMode mm = new ManagerMode();
 
-	int[] changenum = new int[5];		// temp ºñ½ÁÇÑ ´À³¦
-	int[] changemoney = new int[5];		// ±âÁ¸¿¡ ÀÖ´Â °Å ¾Æ´Ï°í Ãß°¡µÈ ½ÃÀç°¡Á®¿À±â
+	int[] changenum = new int[5];		// temp ë¹„ìŠ·í•œ ëŠë‚Œ
+	int[] changemoney = new int[5];		// ê¸°ì¡´ì— ìˆëŠ” ê±° ì•„ë‹ˆê³  ì¶”ê°€ëœ ì‹œì¬ê°€ì ¸ì˜¤ê¸°
 	
 
-	// ÇöÀç ±ÇÁ¾º° »óÈ²
+	// í˜„ì¬ ê¶Œì¢…ë³„ ìƒí™©
 	public void rightNowChange()
 	{
-		System.out.println("=============½ÃÀç »óÈ²================");
+		System.out.println("=============ì‹œì¬ ìƒí™©================");
 		System.out.println();
 		for (int i=0; i<Change.moneyCount.length; i++)
-			System.out.printf("%5d¿ø : %3d°³\n", Change.bills[i], Change.moneyCount[i]);
+			System.out.printf("%5dì› : %3dê°œ\n", Change.bills[i], Change.moneyCount[i]);
 		System.out.println();
 		System.out.println("========================================");
 	}
 
 
-	// ±ÇÁ¾º° ¼ö·® ÀÔ·Â(ÃÖ´ë100°³)
+	// ê¶Œì¢…ë³„ ìˆ˜ëŸ‰ ì…ë ¥(ìµœëŒ€100ê°œ)
 	public void changeInput() throws IOException
 	{
-		System.out.println("±ÇÁ¾º° ¼ö·® Á¦ÇÑ 100°³");
+		System.out.println("ê¶Œì¢…ë³„ ìˆ˜ëŸ‰ ì œí•œ 100ê°œ");
 		for (int i = 0;i<5 ;i++ )
 		{
 			do
 			{
-				System.out.printf("%d¿ø±Ç ¼ö·® (ÀÔ·Â°ªÀ¸·Î º¯°æµË´Ï´Ù.) : ",Change.bills[i]);
+				System.out.printf("%dì›ê¶Œ ìˆ˜ëŸ‰ (ì…ë ¥ê°’ìœ¼ë¡œ ë³€ê²½ë©ë‹ˆë‹¤.) : ",Change.bills[i]);
 				changenum[i] = sc.nextInt();
 			}
 			while (changenum[i] >100 ||  changenum[i]<=0);
 		}
 		System.out.println();
-		realChange();
+		realChange(); 
 
 	}
 
 
-	// ÁøÂ¥ º¯°æÇÒÁö ¹°¾îº¸´Â ¸Ş¼Òµå
+	// ì§„ì§œ ë³€ê²½í• ì§€ ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ
 	public void realChange() throws IOException
 	{
-		System.out.println("¡Ú¼ö·® ¿©ºÎ È®ÀÎ ÈÄ [°ü¸®ÀÚ ¸ğµå]·Î µ¹¾Æ°©´Ï´Ù.¡Ú");
-		System.out.print("¼ö·®À» º¯°æÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
-		String real = sc.next().toUpperCase();
+		System.out.println("â˜…ìˆ˜ëŸ‰ ì—¬ë¶€ í™•ì¸ í›„ [ê´€ë¦¬ì ëª¨ë“œ]ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.â˜…");
+		System.out.print("ìˆ˜ëŸ‰ì„ ë³€ê²½í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
+		String real = sc.next().toUpperCase(); 
 		
 		if (real.equals("Y"))
 		{
 			for (int i=0; i<5; i++)
 				Change.moneyCount[i] = changenum[i];
-			rightNowChange();	// ÇöÀç ½ÃÀç»óÈ²
+			rightNowChange();	// í˜„ì¬ ì‹œì¬ìƒí™©
 		}
 		else	
-			System.out.println("\n¼ö·®ÀÌ º¯°æµÇÁö ¾Ê¾Ò½À´Ï´Ù.\n");	
+			System.out.println("\nìˆ˜ëŸ‰ì´ ë³€ê²½ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n");	
 
-		System.out.println("°ü¸®ÀÚ ¸ğµå·Î µ¹¾Æ°©´Ï´Ù.");
+		System.out.println("ê´€ë¦¬ì ëª¨ë“œë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 
 		ManagerMode mm = new ManagerMode();
 		mm.mMenuPrint();
