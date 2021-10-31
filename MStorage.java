@@ -5,9 +5,9 @@ import java.io.IOException;
 
 public class MStorage
 {
-	int foodNum;		// Àç·á ¹øÈ£ º¯¼ö
-	int su;				// Àç·á Áõ°¡(°¨¼Ò) º¯¼ö
-	static int bowl=10;	// ¿ë±â º¯¼ö
+	int foodNum;		// ì¬ë£Œ ë²ˆí˜¸ ë³€ìˆ˜
+	int su;				// ì¬ë£Œ ì¦ê°€(ê°ì†Œ) ë³€ìˆ˜
+	static int bowl=10;	// ìš©ê¸° ë³€ìˆ˜
 
 	private static BufferedReader br;
 
@@ -15,44 +15,44 @@ public class MStorage
 
 	static
 	{
-		// BufferedReader ÀÎ½ºÅÏ½º »ı¼º
+		// BufferedReader ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		br = new BufferedReader(new InputStreamReader(System.in));
 
-		// ManagerMode ÀÎ½ºÅÏ½º »ı¼º
+		// ManagerMode ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		mm = new ManagerMode();
 	}
 
 
-	public void mStorageChange() throws IOException // Àç·á Ãß°¡/»èÁ¦ ÀÔ·Â ¸Ş¼Òµå
+	public void mStorageChange() throws IOException // ì¬ë£Œ ì¶”ê°€/ì‚­ì œ ì…ë ¥ ë©”ì†Œë“œ
 	{	
 		while(true)
 		{
-			System.out.print("Àç·á¸¦ Ãß°¡ÇÏ½Ã·Á¸é (+), »èÁ¦ÇÏ½Ã·Á¸é (-) : "); // Àç·á¸¦ Ãß°¡ÇÏ·Á¸é (+), »èÁ¦ÇÏ·Á¸é (-) ÀÔ·Â
+			System.out.print("ì¬ë£Œë¥¼ ì¶”ê°€í•˜ì‹œë ¤ë©´ (+), ì‚­ì œí•˜ì‹œë ¤ë©´ (-) : "); // ì¬ë£Œë¥¼ ì¶”ê°€í•˜ë ¤ë©´ (+), ì‚­ì œí•˜ë ¤ë©´ (-) ì…ë ¥
 			
 			Password.op = br.readLine();
 			
-			if(Password.op.equals("+") || Password.op.equals("-"))	// Á¶°Ç : (+), (-) ¿Ã¹Ù¸£°Ô ÀÔ·Â ½Ã
-				break;												// ¿¬»êÀÚ ÀÔ·ÂÄ­ Åë°ú
+			if(Password.op.equals("+") || Password.op.equals("-"))	// ì¡°ê±´ : (+), (-) ì˜¬ë°”ë¥´ê²Œ ì…ë ¥ ì‹œ
+				break;		 										// ì—°ì‚°ì ì…ë ¥ì¹¸ í†µê³¼
 
-			System.out.println("\nÀÔ·Â¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.\n");		// ¿¬»êÀÚ ¿Ã¹Ù¸£Áö ¾Ê°Ô ÀÔ·Â ½Ã ¸Ş¼¼Áö Ç¥½Ã ÈÄ ´Ù½Ã ÀÔ·Â¹ŞÀ½	
+			System.out.println("\nì…ë ¥ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.\n");		// ì—°ì‚°ì ì˜¬ë°”ë¥´ì§€ ì•Šê²Œ ì…ë ¥ ì‹œ ë©”ì„¸ì§€ í‘œì‹œ í›„ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ	
 		}
 
-		mStorageFoodSelect();	// ÀÌ¸§ °ËÅä ¸Ş¼Òµå È£Ãâ
+		mStorageFoodSelect();	// ì´ë¦„ ê²€í†  ë©”ì†Œë“œ í˜¸ì¶œ
 
 	}// end mStorageChange()
 
 
-	public void mStorageFoodSelect() throws IOException	// ÀÌ¸§ °ËÅä ¸Ş¼Òµå
+	public void mStorageFoodSelect() throws IOException	// ì´ë¦„ ê²€í†  ë©”ì†Œë“œ
 	{
-		int vegNum=0;		// ¾ßÃ¤ÀÇ Á¾·ù ÃÑ °¹¼ö¸¦ ¾Ë±âÀ§ÇÑ º¯¼ö (ex : v.size()¿Í °°Àº°³³ä)
-		int mainNum=0;		// ¸ŞÀÎÀÇ Á¾·ù ÃÑ °¹¼ö¸¦ ¾Ë±âÀ§ÇÑ º¯¼ö
-		int sourceNum=0;	// ¼Ò½ºÀÇ Á¾·ù ÃÑ °¹¼ö¸¦ ¾Ë±âÀ§ÇÑ º¯¼ö
-		int topNum=0;		// ÅäÇÎÀÇ Á¾·ù ÃÑ °¹¼ö¸¦ ¾Ë±âÀ§ÇÑ º¯¼ö
+		int vegNum=0;		// ì•¼ì±„ì˜ ì¢…ë¥˜ ì´ ê°¯ìˆ˜ë¥¼ ì•Œê¸°ìœ„í•œ ë³€ìˆ˜ (ex : v.size()ì™€ ê°™ì€ê°œë…)
+		int mainNum=0;		// ë©”ì¸ì˜ ì¢…ë¥˜ ì´ ê°¯ìˆ˜ë¥¼ ì•Œê¸°ìœ„í•œ ë³€ìˆ˜
+		int sourceNum=0;	// ì†ŒìŠ¤ì˜ ì¢…ë¥˜ ì´ ê°¯ìˆ˜ë¥¼ ì•Œê¸°ìœ„í•œ ë³€ìˆ˜
+		int topNum=0;		// í† í•‘ì˜ ì¢…ë¥˜ ì´ ê°¯ìˆ˜ë¥¼ ì•Œê¸°ìœ„í•œ ë³€ìˆ˜
 
 		for (int i=0; i<ISetup.v.size(); i++)
 		{
-			if (ISetup.v.get(i).cate == 1)	// vº¤ÅÍ ÀüÃ¼¸¦ µ¹¸é¼­ ¾ßÃ¤ Ä«Å×°í¸®ÀÇ °æ¿ì
-				vegNum++;					// vegNumÀ» 1¾¿ Áõ°¡
+			if (ISetup.v.get(i).cate == 1)	// vë²¡í„° ì „ì²´ë¥¼ ëŒë©´ì„œ ì•¼ì±„ ì¹´í…Œê³ ë¦¬ì˜ ê²½ìš°
+				vegNum++;					// vegNumì„ 1ì”© ì¦ê°€
 
 			else if (ISetup.v.get(i).cate == 2)
 				mainNum++;
@@ -66,49 +66,49 @@ public class MStorage
 
 		while (true)
 		{
-			System.out.print("¢º Àç·á ¹øÈ£ : "); // Àç·á ¹øÈ£ ÀÔ·Â
+			System.out.print("â–¶ ì¬ë£Œ ë²ˆí˜¸ : "); // ì¬ë£Œ ë²ˆí˜¸ ì…ë ¥
 			foodNum = Integer.parseInt(br.readLine())-1;
 
-			if (foodNum>=0 && foodNum<ISetup.v.size())	// ÀÔ·Â°ªÀÌ 1~vº¤ÅÍÅ©±â »çÀÌÀÇ °ªÀÌ¸é while¹® ºüÁ®³ª¿È
+			if (foodNum>=0 && foodNum<ISetup.v.size())	// ì…ë ¥ê°’ì´ 1~vë²¡í„°í¬ê¸° ì‚¬ì´ì˜ ê°’ì´ë©´ whileë¬¸ ë¹ ì ¸ë‚˜ì˜´
 			{
 				break;
 			}
 			else
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");	// ¾Æ´Ò°æ¿ì ´Ù½Ã ¹İº¹
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");	// ì•„ë‹ê²½ìš° ë‹¤ì‹œ ë°˜ë³µ
 
 		}
 
-		mStorageFoodNum();	// Á¶ÀıÇÒ ¼ö·® ¼±ÅÃ ¸Ş¼Òµå È£Ãâ
+		mStorageFoodNum();	// ì¡°ì ˆí•  ìˆ˜ëŸ‰ ì„ íƒ ë©”ì†Œë“œ í˜¸ì¶œ
 
 	}// end mStorageFoodSelect()
 
 
-	public void mStorageFoodNum() throws IOException // Á¶ÀıÇÒ ¼ö·® ¼±ÅÃ ¸Ş¼Òµå
+	public void mStorageFoodNum() throws IOException // ì¡°ì ˆí•  ìˆ˜ëŸ‰ ì„ íƒ ë©”ì†Œë“œ
 	{
 		while (true)
 		{
-			System.out.printf("¢º [%s] ¼ö·® : ", ISetup.v.get(foodNum).name); // Àç·á Ãß°¡/»èÁ¦ÇÒ ¼ö·® ÀÔ·Â
+			System.out.printf("â–¶ [%s] ìˆ˜ëŸ‰ : ", ISetup.v.get(foodNum).name); // ì¬ë£Œ ì¶”ê°€/ì‚­ì œí•  ìˆ˜ëŸ‰ ì…ë ¥
 			su = Integer.parseInt(br.readLine());
 
-			// Àç·á Ãß°¡½Ã : ÃÑ Àç·á °³¼ö(¿ø·¡ Àç·á+Ãß°¡ ÀÔ·Â Àç·á) 30°³ ÀÌÇÏ·Î ÀÔ·Â
-			// Àç·á »èÁ¦½Ã : ÇØ´ç Àç·áÀÇ ÇöÀç °³¼ö ÀÌ»ó ÀÔ·ÂÇÒ ¼ö ¾øµµ·Ï ÇÔ
+			// ì¬ë£Œ ì¶”ê°€ì‹œ : ì´ ì¬ë£Œ ê°œìˆ˜(ì›ë˜ ì¬ë£Œ+ì¶”ê°€ ì…ë ¥ ì¬ë£Œ) 30ê°œ ì´í•˜ë¡œ ì…ë ¥
+			// ì¬ë£Œ ì‚­ì œì‹œ : í•´ë‹¹ ì¬ë£Œì˜ í˜„ì¬ ê°œìˆ˜ ì´ìƒ ì…ë ¥í•  ìˆ˜ ì—†ë„ë¡ í•¨
 			if (Password.op.equals("+"))
 			{
-				if(su + ISetup.v.get(foodNum).num<=30)	// [°¢ Àç·á´ç ÃÑ Àç·á °³¼ö 30°³ ÀÌÇÏÀÏ ½Ã]
-					break;								// Àç·á ¼ö·® ÀÔ·ÂÄ­ Åë°ú
+				if(su + ISetup.v.get(foodNum).num<=30)	// [ê° ì¬ë£Œë‹¹ ì´ ì¬ë£Œ ê°œìˆ˜ 30ê°œ ì´í•˜ì¼ ì‹œ]
+					break;								// ì¬ë£Œ ìˆ˜ëŸ‰ ì…ë ¥ì¹¸ í†µê³¼
 
-				System.out.println("\nÀÔ·Â¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.\n"); // ¿Ã¹Ù¸£Áö ¾Ê°Ô ÀÔ·Â ½Ã ¸Ş¼¼Áö Ç¥½Ã ÈÄ ´Ù½Ã ÀÔ·Â¹ŞÀ½	
+				System.out.println("\nì…ë ¥ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.\n"); // ì˜¬ë°”ë¥´ì§€ ì•Šê²Œ ì…ë ¥ ì‹œ ë©”ì„¸ì§€ í‘œì‹œ í›„ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ	
 			}
 
 			else
 			{
-				if(su<=ISetup.v.get(foodNum).num)		// [ÇöÀç ¼ö·® ÀÌÇÏ·Î ÀÔ·Â½Ã] 
-					break;								// Àç·á ¼ö·® ÀÔ·ÂÄ­ Åë°ú
-				System.out.println("\nÀÔ·Â¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.\n"); // ¿Ã¹Ù¸£Áö ¾Ê°Ô ÀÔ·Â ½Ã ¸Ş¼¼Áö Ç¥½Ã ÈÄ ´Ù½Ã ÀÔ·Â¹ŞÀ½
+				if(su<=ISetup.v.get(foodNum).num)		// [í˜„ì¬ ìˆ˜ëŸ‰ ì´í•˜ë¡œ ì…ë ¥ì‹œ] 
+					break;								// ì¬ë£Œ ìˆ˜ëŸ‰ ì…ë ¥ì¹¸ í†µê³¼
+				System.out.println("\nì…ë ¥ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.\n"); // ì˜¬ë°”ë¥´ì§€ ì•Šê²Œ ì…ë ¥ ì‹œ ë©”ì„¸ì§€ í‘œì‹œ í›„ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ
 			}
 		}
 
-		if (Password.op.equals("+")) //¼ö·® °ËÅä°¡ ³¡³ª¸é °¢°¢ÀÇ ½ÇÇà ¸Ş¼Òµå È£Ãâ
+		if (Password.op.equals("+")) //ìˆ˜ëŸ‰ ê²€í† ê°€ ëë‚˜ë©´ ê°ê°ì˜ ì‹¤í–‰ ë©”ì†Œë“œ í˜¸ì¶œ
 			mSAdd();
 		else
 			mSRemove();
@@ -116,86 +116,86 @@ public class MStorage
 	}// end mStorageFoodNum()
 
 
-	public void mSAdd() throws IOException	// Àç°í Ãß°¡ ½ÇÇà ¸Ş¼Òµå
+	public void mSAdd() throws IOException	// ì¬ê³  ì¶”ê°€ ì‹¤í–‰ ë©”ì†Œë“œ
 	{
-		System.out.print("\nÀç°í¸¦ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+		System.out.print("\nì¬ê³ ë¥¼ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 		Password.con = br.readLine().toUpperCase();
 
-		if(Password.con.equals("Y")) // ±¸¸ÅÀÚ°¡ Y ÀÔ·ÂÇÑ °æ¿ì Àç°í Ãß°¡
+		if(Password.con.equals("Y")) // êµ¬ë§¤ìê°€ Y ì…ë ¥í•œ ê²½ìš° ì¬ê³  ì¶”ê°€
 		{
 			ISetup.v.get(foodNum).num += su;
-			System.out.println("\n<<Àç°í°¡ Ãß°¡µÆ½À´Ï´Ù.>>\n");
+			System.out.println("\n<<ì¬ê³ ê°€ ì¶”ê°€ëìŠµë‹ˆë‹¤.>>\n");
 		}
 		else
-			System.out.println("Ãë¼ÒµÆ½À´Ï´Ù.");
+			System.out.println("ì·¨ì†ŒëìŠµë‹ˆë‹¤.");
 		
-		System.out.println("ÀÌÀü ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.");
+		System.out.println("ì´ì „ ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 		mm.mStorage();
 			
 	} //end mSAdd()
 
 
-	public void mSRemove() throws IOException	// Àç°í »èÁ¦ ½ÇÇà ¸Ş¼Òµå
+	public void mSRemove() throws IOException	// ì¬ê³  ì‚­ì œ ì‹¤í–‰ ë©”ì†Œë“œ
 	{                     
-		System.out.print("\nÀç°í¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : "); 
+		System.out.print("\nì¬ê³ ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : "); 
 		Password.con = br.readLine().toUpperCase();
 
-		if(Password.con.equals("Y")) // ±¸¸ÅÀÚ°¡ Y ÀÔ·ÂÇÑ °æ¿ì Àç°í »èÁ¦
+		if(Password.con.equals("Y")) // êµ¬ë§¤ìê°€ Y ì…ë ¥í•œ ê²½ìš° ì¬ê³  ì‚­ì œ
 		{
 			ISetup.v.get(foodNum).num -= su;
-			System.out.println("\n<<Àç°í°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.>>\n");
+			System.out.println("\n<<ì¬ê³ ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.>>\n");
 		}
 		else
-			System.out.println("Ãë¼ÒµÆ½À´Ï´Ù.");
+			System.out.println("ì·¨ì†ŒëìŠµë‹ˆë‹¤.");
 
-		System.out.println("ÀÌÀü ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.");
+		System.out.println("ì´ì „ ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 		mm.mStorage();
 
 	} // end mSAdd()
 
 
-	public void mBowlChange() throws IOException	// ¿ë±â Ãß°¡ ½ÇÇà ¸Ş¼Òµå
+	public void mBowlChange() throws IOException	// ìš©ê¸° ì¶”ê°€ ì‹¤í–‰ ë©”ì†Œë“œ
 	{
-		int bowlChangeNum;	// ¿ë±â º¯°æ º¯¼ö
+		int bowlChangeNum;	// ìš©ê¸° ë³€ê²½ ë³€ìˆ˜
 
 		
 		System.out.println();
-		System.out.printf("ÇöÀç ¿ë±â °¹¼ö : %d", bowl);
+		System.out.printf("í˜„ì¬ ìš©ê¸° ê°¯ìˆ˜ : %d", bowl);
 		System.out.println();
-		System.out.print("¿ë±â¸¦ ¸î°³ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î? : ");
+		System.out.print("ìš©ê¸°ë¥¼ ëª‡ê°œ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ? : ");
 	
 		bowlChangeNum = Integer.parseInt(br.readLine());
 
-		if (bowl+bowlChangeNum>=0 && bowl+bowlChangeNum <= 30)	// ±âÁ¸ ¿ë±â¼ö·®°ú ÀÔ·Â ¼ö·®À» ´õÇØ 30 ÀÌÇÏ¸é
+		if (bowl+bowlChangeNum>=0 && bowl+bowlChangeNum <= 30)	// ê¸°ì¡´ ìš©ê¸°ìˆ˜ëŸ‰ê³¼ ì…ë ¥ ìˆ˜ëŸ‰ì„ ë”í•´ 30 ì´í•˜ë©´
 		{
-			bowl = bowl+bowlChangeNum;	// ¿ë±â Ãß°¡ ½ÇÇà
-			System.out.println("<<¿ë±â°¡ Ãß°¡ µÇ¾ú½À´Ï´Ù.>>");
+			bowl = bowl+bowlChangeNum;	// ìš©ê¸° ì¶”ê°€ ì‹¤í–‰
+			System.out.println("<<ìš©ê¸°ê°€ ì¶”ê°€ ë˜ì—ˆìŠµë‹ˆë‹¤.>>");
 		}
 		else
 		{
-			System.out.println("ÀÔ·Â¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù");	// ¾Æ´Ò°æ¿ì ½ÇÇàÇÏÁö ¾Ê°í
+			System.out.println("ì…ë ¥ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤");	// ì•„ë‹ê²½ìš° ì‹¤í–‰í•˜ì§€ ì•Šê³ 
 		}
 
-		mStorageReturn();	// °è¼Ó ¼öÇàÇÒÁö ¹°¾îº¸´Â ¸Ş¼Òµå È£Ãâ
+		mStorageReturn();	// ê³„ì† ìˆ˜í–‰í• ì§€ ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ í˜¸ì¶œ
 
 	}// end mBowlChange()
 
 
-	public void mStorageReturn() throws IOException	// °è¼Ó ¼öÇà ¹°¾îº¸´Â ¸Ş¼Òµå ½ÇÇà
+	public void mStorageReturn() throws IOException	// ê³„ì† ìˆ˜í–‰ ë¬¼ì–´ë³´ëŠ” ë©”ì†Œë“œ ì‹¤í–‰
 	{
-		// Password ÀÎ½ºÅÏ½º »ı¼º
+		// Password ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		Password pw = new Password();
 
-		System.out.print("Àç°í°ü¸® ÀÛ¾÷À» °è¼Ó ¼öÇàÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ");
+		System.out.print("ì¬ê³ ê´€ë¦¬ ì‘ì—…ì„ ê³„ì† ìˆ˜í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ");
 
 		Password.con = br.readLine().toUpperCase();
 
-		// 'Y' ÀÔ·Â½Ã Ãß°¡ ¼öÇà
+		// 'Y' ì…ë ¥ì‹œ ì¶”ê°€ ìˆ˜í–‰
 		if(Password.con.equals("Y"))
 		{
 			mm.mStorage();
 		}
-		// ´Ù¸¥°Å ÀÔ·Â½Ã Ã³À½ È­¸éÀ¸·Î
+		// ë‹¤ë¥¸ê±° ì…ë ¥ì‹œ ì²˜ìŒ í™”ë©´ìœ¼ë¡œ
 		else
 		{
 			pw.modePrint();
