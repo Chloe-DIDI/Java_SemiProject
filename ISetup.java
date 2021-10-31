@@ -12,29 +12,29 @@ public class ISetup
 	static ArrayList<String> payArray= new ArrayList<String>();
 
 
-	public ISetup()	//ÃÊ±âÀç·á¼¼ÆÃ
+	public ISetup()	//ì´ˆê¸°ì¬ë£Œì„¸íŒ…
 	{
-		// ¾ßÃ¤ ¡æ 1
-		v.add(new Ingredient(1, "¾ç»óÃß", 20, 11, 2000));
-		v.add(new Ingredient(1, "´ç±Ù", 10, 34, 1000));
-		v.add(new Ingredient(1, "¹æ¿ïÅä¸¶Åä", 10, 8, 1000));
-		v.add(new Ingredient(1, "¾çÆÄ", 10, 35, 1000));
-		v.add(new Ingredient(1, "¿ÀÀÌ", 10, 9, 1000));
+		// ì•¼ì±„ â†’ 1
+		v.add(new Ingredient(1, "ì–‘ìƒì¶”", 20, 11, 2000));
+		v.add(new Ingredient(1, "ë‹¹ê·¼", 10, 34, 1000));
+		v.add(new Ingredient(1, "ë°©ìš¸í† ë§ˆí† ", 10, 8, 1000));
+		v.add(new Ingredient(1, "ì–‘íŒŒ", 10, 35, 1000));
+		v.add(new Ingredient(1, "ì˜¤ì´", 10, 9, 1000));
 
-		// ¸ŞÀÎ ¡æ 2
-		v.add(new Ingredient(2, "¿¬¾î", 3, 106, 2500));
-		v.add(new Ingredient(2, "ÄÉÀÌÁØ", 3, 145, 1800));
-		v.add(new Ingredient(2, "´ß°¡½¿»ì", 3, 107, 1500));
+		// ë©”ì¸ â†’ 2
+		v.add(new Ingredient(2, "ì—°ì–´", 3, 106, 2500));
+		v.add(new Ingredient(2, "ì¼€ì´ì¤€", 3, 145, 1800));
+		v.add(new Ingredient(2, "ë‹­ê°€ìŠ´ì‚´", 3, 107, 1500));
 
-		// ¼Ò½º ¡æ 3
-		v.add(new Ingredient(3, "¹ß»ç¹Í", 3, 27, 500));
-		v.add(new Ingredient(3, "¿À¸®¿£Å»",3,28,500));
-		v.add(new Ingredient(3, "Âü±úµå·¹½Ì",3,65,700));
-		v.add(new Ingredient(3, "Çã´Ï¸Ó½ºÅ¸µå",3,30,300));
+		// ì†ŒìŠ¤ â†’ 3 
+		v.add(new Ingredient(3, "ë°œì‚¬ë¯¹", 3, 27, 500));
+		v.add(new Ingredient(3, "ì˜¤ë¦¬ì—”íƒˆ",3,28,500));
+		v.add(new Ingredient(3, "ì°¸ê¹¨ë“œë ˆì‹±",3,65,700));
+		v.add(new Ingredient(3, "í—ˆë‹ˆë¨¸ìŠ¤íƒ€ë“œ",3,30,300));
 
-		// ÅäÇÎ ¡æ 4
-		v.add(new Ingredient(4, "Ä¡Áî", 3, 25, 300));
-		v.add(new Ingredient(4, "°¥¸¯ÈÄ·¹ÀÌÅ©", 4, 77, 300));
+		// í† í•‘ â†’ 4
+		v.add(new Ingredient(4, "ì¹˜ì¦ˆ", 3, 25, 300));
+		v.add(new Ingredient(4, "ê°ˆë¦­í›„ë ˆì´í¬", 4, 77, 300));
 	}
 
 } //end ISetup class
