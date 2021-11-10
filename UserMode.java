@@ -324,4 +324,4 @@ class UserMode extends TempStation
 
 	}//end uPayRun()
 
-}
+} 
