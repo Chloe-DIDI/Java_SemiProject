@@ -12,7 +12,7 @@
 
 <h3>*️⃣ 코드 및 세부 구현 내용은 
   
-[4팀 발표자료.pptx](https://github.com/Chloe-DIDI/Java_SemiProject/files/7882098/4.pptx)   참고
+[샐러드자판기.pptx](https://github.com/Chloe-DIDI/Java_SemiProject/files/7882098/4.pptx)   참고
 
 </h3>
 <h4>○ Flow Chart</h4>
